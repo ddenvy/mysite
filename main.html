@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Danil Lobanov | Go-Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #2d1b4e 0%, #3c2663 50%, #4a2c73 100%);
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3b82f6;
+            border: 4px solid #1e40af;
+        }
+        .tech-tag {
+            transition: all 0.3s ease;
+        }
+        .tech-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 640px) {
+            .tech-tag {
+                font-size: 0.75rem;
+                padding: 0.25rem 0.5rem;
+            }
+            
+            .nav-link {
+                font-size: 0.875rem;
+                padding: 0.5rem 0.75rem;
+            }
+            
+            .gradient-bg {
+                border-radius: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+    <!-- Header -->
+    <header class="py-4 md:py-12 lg:py-20">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 gradient-bg text-white rounded-xl py-8 md:py-12 lg:py-20">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-10 text-center md:text-left">
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Danil Lobanov</h1>
+                    <h2 class="text-xl md:text-2xl lg:text-3xl font-semibold mb-6">Go Developer / Backend Engineer</h2>
+                    <p class="text-base md:text-lg mb-8 max-w-lg mx-auto md:mx-0">Specialist in developing high-load distributed systems and B2B SaaS products with over 3 years of experience.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-4 justify-center md:justify-start">
+                        <a href="mailto:danil.lobanov@outlook.com" class="bg-white text-purple-900 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition">
+                            <i class="fas fa-envelope mr-2"></i>Email
+                        </a>
+                        <a href="https://t.me/envydany" target="_blank" class="bg-purple-900 text-white px-6 py-2 rounded-full font-medium hover:bg-purple-800 transition">
+                            <i class="fab fa-telegram mr-2"></i>Telegram
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-purple-900 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                            <img src="public/photo.jpg" alt="Danil Lobanov" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-white text-purple-900 px-4 py-2 rounded-full shadow-lg font-medium">
+                            <i class="fas fa-code mr-2"></i>Go Developer
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex justify-center flex-wrap gap-2 md:gap-8 py-3 md:py-4">
+                <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2">About</a>
+                <a href="#projects" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2">Projects</a>
+                <a href="#experience" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2">Experience</a>
+                <a href="#education" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2">Education</a>
+                <a href="#skills" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2">Skills</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="py-8 md:py-16">
+        <div class="max-w-6xl mx-auto px-4 md:px-6">
+            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">About Me</h2>
+                <div class="bg-gray-50 rounded-xl p-6 md:p-8 shadow-sm">
+                <p class="text-base md:text-lg text-gray-700 mb-6">
+                    Go developer with over 3 years of experience in building distributed high-load systems and B2B SaaS products.
+                </p>
+                <p class="text-base md:text-lg text-gray-700 mb-6">
+                    Specialized in microservice architecture, asynchronous data processing (RabbitMQ, Kafka), REST/gRPC API development, and backend service performance optimization.
+                </p>
+                <p class="text-base md:text-lg text-gray-700 mb-6">
+                    Experienced in creating logistics and CRM systems processing millions of events daily. Also proficient in .NET, enabling effective work in multi-stack teams.
+                </p>
+                <p class="text-base md:text-lg text-gray-700">
+                    Advocate of Clean Architecture principles, CI/CD, and high code test coverage.
+                </p>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-8 md:py-16">
+        <div class="max-w-6xl mx-auto px-4 md:px-6">
+            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">Projects</h2>
+                
+                <!-- GitHub Profile -->
+                <div class="mb-12">
+                <div class="bg-gradient-to-r from-purple-900 to-gray-900 rounded-xl p-6 shadow-lg text-white">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <i class="fab fa-github text-4xl mr-4"></i>
+                            <div>
+                                <h3 class="text-xl font-bold">GitHub Profile</h3>
+                                <p class="text-gray-300">@ddenvy</p>
+                            </div>
+                        </div>
+                        <a href="https://github.com/ddenvy" target="_blank" class="bg-white text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Projects Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+                <!-- Project 1: QuickMind -->
+                <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-0">
+                    <div class="mb-4">
+                        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">QuickMind</h3>
+                        <p class="text-gray-600 text-sm mb-4">Flashcard learning application that helps efficiently memorize information using spaced repetition</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">C#</span>
+                        <span class="tech-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Desktop App</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-gray-500 text-sm">
+                            <i class="fas fa-star mr-1"></i>
+                            <span>Education</span>
+                        </div>
+                        <a href="https://github.com/ddenvy/QuickMind" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Bank App -->
+                <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-0">
+                    <div class="mb-4">
+                        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Bank App</h3>
+                        <p class="text-gray-600 text-sm mb-4">Banking application with account management and transaction processing features</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Go</span>
+                        <span class="tech-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Backend</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-gray-500 text-sm">
+                            <i class="fas fa-university mr-1"></i>
+                            <span>Finance</span>
+                        </div>
+                        <a href="https://github.com/ddenvy/bank-app" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Budget Telegram Bot -->
+                <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-0">
+                    <div class="mb-4">
+                        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Budget Telegram Bot</h3>
+                        <p class="text-gray-600 text-sm mb-4">Telegram bot for personal finance management and budget tracking</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Go</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Telegram API</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-gray-500 text-sm">
+                            <i class="fas fa-robot mr-1"></i>
+                            <span>Bot</span>
+                        </div>
+                        <a href="https://github.com/ddenvy/budget-telegram-bot" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Task Management System -->
+                <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-0">
+                    <div class="mb-4">
+                        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Task Management System</h3>
+                        <p class="text-gray-600 text-sm mb-4">Task management system with project creation and progress tracking capabilities</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Go</span>
+                        <span class="tech-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Web App</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-gray-500 text-sm">
+                            <i class="fas fa-tasks mr-1"></i>
+                            <span>Productivity</span>
+                        </div>
+                        <a href="https://github.com/ddenvy/Task-Management-System" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-8 md:py-16">
+        <div class="max-w-6xl mx-auto px-4 md:px-6">
+            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">Work Experience</h2>
+                
+                <div class="relative">
+                <!-- Timeline -->
+                <div class="border-l-2 border-blue-400 pl-8 space-y-12">
+                    <!-- Job 1 -->
+                    <div class="relative timeline-item">
+                        <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                            <div class="flex flex-col md:flex-row justify-between mb-4">
+                                <h3 class="text-lg md:text-xl font-bold text-blue-800">Valletta Software Development LTD</h3>
+                                <div class="text-gray-600 font-medium">March 2023 – Present</div>
+                            </div>
+                            <div class="flex items-center text-gray-600 mb-4">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span>Malta (remote)</span>
+                            </div>
+                            <div class="mb-4">
+                                <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">Go Backend Developer</span>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                International IT company specializing in SaaS products and enterprise systems (CRM, ERP) development for clients in Europe, Asia, and the Middle East.
+                            </p>
+                            <h4 class="font-bold text-gray-800 mb-2">Project: CRM recruitment automation platforms</h4>
+                            <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                                <li>Developed backend logic for a recruitment automation platform with thousands of active users.</li>
+                                <li>Built Go microservices using PostgreSQL, Redis and RabbitMQ, improving system reliability and scalability.</li>
+                                <li>Implemented an asynchronous notification system via SMTP and Telegram API, accelerating message delivery by 35%.</li>
+                                <li>Optimized analytical queries and added Redis caching, reducing report generation time by 25%.</li>
+                                <li>Developed CI/CD pipelines with Docker and GitHub Actions, reducing deployment time by 70%.</li>
+                                <li>Applied Clean Architecture principles, wrote unit and integration tests, documented API via Swagger.</li>
+                            </ul>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Go</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">gRPC</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Redis</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">RabbitMQ</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Docker</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">GitHub Actions</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">REST API</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Clean Architecture</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Scrum</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Job 2 -->
+                    <div class="relative timeline-item">
+                        <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                            <div class="flex flex-col md:flex-row justify-between mb-4">
+                                <h3 class="text-lg md:text-xl font-bold text-blue-800">DKH.Commerce / NDA Logistic platform</h3>
+                                <div class="text-gray-600 font-medium">September 2021 – February 2023</div>
+                            </div>
+                            <div class="flex items-center text-gray-600 mb-4">
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span>Guangzhou, China (hybrid)</span>
+                            </div>
+                            <div class="mb-4">
+                                <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">Go-developer</span>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                Project to develop a logistics solution for one of China's largest retailers. The system processed order distribution, routing and warehouse management in real time.
+                            </p>
+                            <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                                <li>Developed a high-load backend system supporting up to 900,000 users and 50,000 RPS.</li>
+                                <li>Designed and implemented a multi-client user tracking and logistics module with real-time processing.</li>
+                                <li>Integrated geodependent services with peak traffic up to 75,000 RPS, increasing response speed by 10x and reducing requests by 50%.</li>
+                                <li>Reduced hosting costs by 3x by redesigning data processing architecture and implementing geo-distributed clusters.</li>
+                                <li>Migrated from a monolith (~10,000 lines of code) to microservice architecture, splitting business logic by regions.</li>
+                                <li>Configured monitoring and logging (Prometheus, Grafana), ensuring high system observability.</li>
+                            </ul>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Go</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Redis</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Kafka</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">RabbitMQ</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">gRPC</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Docker</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Kubernetes</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Prometheus</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Grafana</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">GitHub Actions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-8 md:py-16">
+        <div class="max-w-6xl mx-auto px-4 md:px-6">
+            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">Education</h2>
+                <div class="bg-gray-50 rounded-xl p-6 md:p-8 shadow-sm">
+                <div class="flex items-start">
+                    <div class="bg-blue-100 p-4 rounded-full mr-6">
+                        <i class="fas fa-graduation-cap text-blue-800 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">Moscow Engineering Physics Institute (MEPhI)</h3>
+                        <p class="text-gray-600 mb-2">Master's Degree, Software Engineering</p>
+                        <p class="text-gray-500">September 2024 – July 2026</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-8 md:py-16">
+        <div class="max-w-6xl mx-auto px-4 md:px-6">
+            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">Skills</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+                <!-- Column 1 -->
+                <div class="bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                        <i class="fas fa-code mr-2"></i> Languages & Frameworks
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Go</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Gin</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">C#</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">ASP.NET Core</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">REST API</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">gRPC</span>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div class="bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                        <i class="fas fa-database mr-2"></i> Databases
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Redis</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">SQL Server</span>
+                    </div>
+                </div>
+                
+                <!-- Column 3 -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                        <i class="fas fa-exchange-alt mr-2"></i> Queues & Streaming
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">RabbitMQ</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Kafka</span>
+                    </div>
+                </div>
+                
+                <!-- Column 4 -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                        <i class="fas fa-project-diagram mr-2"></i> Architecture
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Microservices</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Clean Architecture</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">DDD</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Event-Driven</span>
+                    </div>
+                </div>
+                
+                <!-- Column 5 -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                        <i class="fas fa-server mr-2"></i> DevOps & Tools
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Docker</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Kubernetes</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">GitHub Actions</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Prometheus</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Grafana</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Git</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Swagger</span>
+                    </div>
+                </div>
+                
+                <!-- Column 6 -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                        <i class="fas fa-vial mr-2"></i> Testing
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Go testing</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">testify</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">mockery</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">xUnit</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">NSubstitute</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Moq</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">FluentAssertions</span>
+                    </div>
+                </div>
+                
+                <!-- Column 7 -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                        <i class="fas fa-tasks mr-2"></i> Methodologies
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Agile</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Scrum</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Kanban</span>
+                    </div>
+                </div>
+                
+                <!-- Column 8 -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                        <i class="fas fa-language mr-2"></i> Languages
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Russian (C2)</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">English (C1)</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Chinese (B1)</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="py-4 md:py-8">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 gradient-bg text-white rounded-xl py-6 md:py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold">Danil Lobanov</h3>
+                    <p class="text-purple-300">Go Developer / Backend Engineer</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="mailto:danil.lobanov@outlook.com" class="text-white hover:text-purple-300 transition">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                    <a href="https://t.me/envydany" target="_blank" class="text-white hover:text-purple-300 transition">
+                        <i class="fab fa-telegram text-2xl"></i>
+                    </a>
+                    <a href="https://github.com/ddenvy" target="_blank" class="text-white hover:text-purple-300 transition">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-purple-800 mt-8 pt-6 text-center text-purple-300">
+                <p>&copy; 2023 Danil Lobanov. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-purple-900 text-white w-12 h-12 rounded-full shadow-lg hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
