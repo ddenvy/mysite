@@ -77,8 +77,8 @@
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-10 text-center md:text-left">
                     <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Danil Lobanov</h1>
-                    <h2 class="text-xl md:text-2xl lg:text-3xl font-semibold mb-6">Backend Developer (Golang, C#, .NET)</h2>
-                    <p class="text-base md:text-lg mb-8 max-w-lg mx-auto md:mx-0">Backend Developer with over 3 years of experience in building scalable SaaS products and enterprise-grade CRM/ERP systems.</p>
+                    <h2 class="text-xl md:text-2xl lg:text-3xl font-semibold mb-6">Backend Developer (C#, .NET, Go, PostgreSQL, Docker)</h2>
+                    <p class="text-base md:text-lg mb-8 max-w-lg mx-auto md:mx-0">Software Engineer with over 3 years of experience in backend development, specializing in scalable SaaS products and enterprise-grade systems (CRM, IoT). Located in Guangzhou, China.</p>
                     <div class="flex flex-col sm:flex-row gap-4 sm:gap-4 justify-center md:justify-start">
                         <a href="mailto:danil.lobanov@outlook.com" class="bg-white text-purple-900 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition">
                             <i class="fas fa-envelope mr-2"></i>Email
@@ -125,13 +125,13 @@
                 <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">About Me</h2>
                 <div class="bg-gray-50 rounded-xl p-6 md:p-8 shadow-sm">
                 <p class="text-base md:text-lg text-gray-700 mb-6">
-                    Backend Developer with over 3 years of experience in building scalable SaaS products and enterprise-grade CRM/ERP systems.
+                    Software Engineer with over 3 years of experience in backend development, specializing in scalable SaaS products and enterprise-grade systems (CRM, IoT).
                 </p>
                 <p class="text-base md:text-lg text-gray-700 mb-6">
-                    Proficient in designing and developing backend solutions using C# (.NET) and Golang, with a strong focus on microservices, REST/gRPC APIs, message brokers (RabbitMQ, Kafka), database performance tuning, and CI/CD automation.
+                    Proficient in C# (.NET), Go, PostgreSQL, microservices architecture, REST/gRPC APIs, and message brokers (RabbitMQ, MQTT). Delivered high-impact solutions for HR automation and smart container management.
                 </p>
                 <p class="text-base md:text-lg text-gray-700">
-                    Delivered multiple successful modules for HR automation, eCommerce admin panels, and task management systems, resulting in a 40% reduction in operational errors and a 60% increase in delivery speed.
+                    Achieved significant improvements in performance, reliability, and delivery speed with comprehensive testing (~60% coverage) and Clean Architecture principles.
                 </p>
             </div>
             </div>
@@ -274,26 +274,29 @@
                             </div>
                             <div class="flex items-center text-gray-600 mb-4">
                                 <i class="fas fa-map-marker-alt mr-2"></i>
-                                <span>Malta (remote)</span>
+                                <span>Malta (Remote)</span>
                             </div>
                             <div class="mb-4">
                                 <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">Backend Developer</span>
                             </div>
                             <p class="text-gray-700 mb-4">
-                                Working on a CRM system for automating recruitment processes for a European client. Part of an 8-person Scrum team.
+                                Worked on a CRM system for automating recruitment processes for a European B2B client. Part of an 8-person Scrum team.
                             </p>
                             <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                                <li>Developed the candidate management module, including full CRUD, filters, and access roles</li>
-                                <li>Built REST APIs for the admin panel</li>
-                                <li>Designed and implemented a notification microservice for async messaging (Telegram & Email)</li>
-                                <li>Set up message delivery via RabbitMQ with retry policies (Polly)</li>
-                                <li>Integrated Redis caching and Prometheus + Grafana monitoring</li>
+                                <li>Developed the candidate management module (CRUD, filters, access roles) using C# and .NET Core (migrated from .NET 6 to .NET 8)</li>
+                                <li>Built REST APIs for the admin panel and a notification microservice with SMTP and Telegram API integration via RabbitMQ (using MassTransit, retry with Polly)</li>
+                                <li>Optimized PostgreSQL queries with Entity Framework Core for faster analytical reports</li>
+                                <li>Wrote unit and integration tests (xUnit, NSubstitute, FluentAssertions, ~60% coverage)</li>
+                                <li>Configured CI/CD with GitHub Actions and documented APIs with Swagger</li>
+                                <li>Refactored code following Clean Architecture principles</li>
                             </ul>
                             <h4 class="font-bold text-gray-800 mb-2 mt-4">Achievements:</h4>
                             <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                                <li>Improved analytical report speed by 25% through optimized SQL queries and caching</li>
-                                <li>Reduced notification delivery errors by 20%, increased delivery speed by 35%</li>
-                                <li>Reduced deployment time from 10 to 3 minutes via GitHub Actions CI/CD</li>
+                                <li>Improved analytical report speed by 25% through query optimization and Redis caching</li>
+                                <li>Reduced notification delivery errors by 20% and increased delivery speed by 35%</li>
+                                <li>Reduced deployment time from 10 to 3 minutes using GitHub Actions and Docker</li>
+                                <li>Decreased production bugs by 40% with comprehensive testing</li>
+                                <li>Simplified onboarding with Swagger and structured code</li>
                             </ul>
                             <div class="mt-4 flex flex-wrap gap-2">
                                 <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">C#</span>
@@ -321,44 +324,54 @@
                     <div class="relative timeline-item">
                         <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                             <div class="flex flex-col md:flex-row justify-between mb-4">
-                                <h3 class="text-lg md:text-xl font-bold text-blue-800">DKH.Commerce</h3>
-                                <div class="text-gray-600 font-medium">September 2021 – February 2023</div>
+                                <h3 class="text-lg md:text-xl font-bold text-blue-800">Smart Container Solutions (Empire of Bloom)</h3>
+                                <div class="text-gray-600 font-medium">August 2021 – February 2023</div>
                             </div>
                             <div class="flex items-center text-gray-600 mb-4">
                                 <i class="fas fa-map-marker-alt mr-2"></i>
-                                <span>Guangzhou, China (hybrid)</span>
+                                <span>Guangzhou, China (Hybrid)</span>
                             </div>
                             <div class="mb-4">
                                 <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">Backend Developer</span>
                             </div>
                             <p class="text-gray-700 mb-4">
-                                Developed a task management system for smart containers based on a microservice architecture. Worked in a 6-person team using Scrum.
+                                Developed a task management and monitoring system for a smart container device (SaaS platform for organic product cultivation, www.empireofbloom.com). Worked in a 3-person Scrum team under a technical lead focused on low-level firmware (FreeRTOS, MQTT, Modbus).
                             </p>
                             <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                                <li>Built admin panel logic for user, task, and project management</li>
-                                <li>Implemented business logic for status transitions, deadlines, and permissions</li>
-                                <li>Configured JWT authentication and role-based access</li>
-                                <li>Exposed internal gRPC services for IoT device interactions</li>
-                                <li>Created a telemetry processing microservice handling high-frequency sensor data</li>
-                                <li>Built gRPC clients to fetch and validate data from smart devices</li>
-                                <li>Integrated with monitoring/logging pipelines</li>
+                                <li>Built two microservices using C# and .NET 6 with REST API and gRPC for task management and monitoring</li>
+                                <li>Integrated RabbitMQ (via MassTransit) for asynchronous processing of MQTT sensor data</li>
+                                <li>Optimized PostgreSQL queries with Entity Framework Core for reporting</li>
+                                <li>Wrote tests (xUnit, NSubstitute, FluentAssertions, ~60% coverage)</li>
+                                <li>Set up CI/CD with GitHub Actions and containerization with Docker</li>
+                                <li>Documented APIs with Swagger and refactored code using Clean Architecture</li>
                             </ul>
                             <h4 class="font-bold text-gray-800 mb-2 mt-4">Achievements:</h4>
                             <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                                <li>Improved service communication speed by 30% by replacing REST with gRPC</li>
-                                <li>Delivered 4 microservices using Clean Architecture principles</li>
-                                <li>Achieved 60%+ unit and integration test coverage</li>
+                                <li>Accelerated container monitoring by 25% with RabbitMQ and MassTransit for MQTT data</li>
+                                <li>Reduced report generation time by 20% with PostgreSQL optimization and Redis caching</li>
+                                <li>Decreased production bugs by 30% through testing</li>
+                                <li>Reduced deployment time from 7 to 3 minutes with GitHub Actions and Docker</li>
+                                <li>Improved frontend integration (Vue 3, Next.js) with Swagger</li>
                             </ul>
                             <div class="mt-4 flex flex-wrap gap-2">
                                 <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">C#</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">.NET Core</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">.NET 6</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Go</span>
                                 <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">gRPC</span>
                                 <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Entity Framework Core</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">RabbitMQ</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MassTransit</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MQTT (Mosquitto)</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Modbus</span>
                                 <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Docker</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Clean Architecture</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Swagger</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">GitHub Actions</span>
                                 <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">xUnit</span>
                                 <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">NSubstitute</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">FluentAssertions</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Swagger</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Prometheus</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Grafana</span>
                             </div>
                         </div>
                     </div>
@@ -418,14 +431,13 @@
                     </h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">C#</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">.NET Core/6/8/9</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Go</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">TypeScript</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">SQL</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">.NET Core</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">ASP.NET Core</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Node.js</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Next.js</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">React</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Next.js</span>
                     </div>
                 </div>
                 
@@ -436,7 +448,7 @@
                     </h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MySQL</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Entity Framework Core</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Redis</span>
                     </div>
                 </div>
@@ -448,7 +460,8 @@
                     </h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">RabbitMQ</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Kafka</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MQTT (Mosquitto)</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Modbus</span>
                     </div>
                 </div>
                 
@@ -460,7 +473,8 @@
                     <div class="flex flex-wrap gap-2">
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Microservices</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Clean Architecture</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">REST</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Domain-Driven Design (DDD)</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">REST API</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">gRPC</span>
                     </div>
                 </div>
@@ -472,10 +486,10 @@
                     </h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Docker</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Git</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">GitHub Actions</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Prometheus</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Grafana</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Swagger (OpenAPI)</span>
                     </div>
                 </div>
                 
@@ -487,6 +501,8 @@
                     <div class="flex flex-wrap gap-2">
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">xUnit</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">NSubstitute</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">FluentAssertions</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">~60% coverage</span>
                     </div>
                 </div>
                 
@@ -496,10 +512,11 @@
                         <i class="fas fa-tasks mr-2"></i> Methodologies
                     </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Microservices</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Clean Architecture</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Agile</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Scrum</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">TDD</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Gitflow</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">IoT</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Asynchronous programming</span>
                     </div>
                 </div>
                 
@@ -509,9 +526,9 @@
                         <i class="fas fa-language mr-2"></i> Languages
                     </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Russian (C2)</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">English (C1)</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Chinese (B1)</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Russian (Native)</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">English (C1 – Advanced)</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Chinese (B1 – Intermediate)</span>
                     </div>
                 </div>
             </div>
@@ -527,7 +544,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0">
                     <h3 class="text-xl font-bold">Danil Lobanov</h3>
-                    <p class="text-purple-300">Backend Developer (Golang, C#, .NET)</p>
+                    <p class="text-purple-300">Backend Developer (C#, .NET, Go, PostgreSQL, Docker)</p>
                 </div>
                 <div class="flex space-x-6">
                     <a href="mailto:danil.lobanov@outlook.com" class="text-white hover:text-purple-300 transition">
@@ -545,7 +562,7 @@
                 </div>
             </div>
             <div class="border-t border-purple-800 mt-8 pt-6 text-center text-purple-300">
-                <p>&copy; 2023 Danil Lobanov. All rights reserved.</p>
+                <p>&copy; 2024 Danil Lobanov. All rights reserved.</p>
             </div>
         </div>
     </footer>
