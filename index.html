@@ -78,16 +78,19 @@
                 <div class="md:w-1/2 mb-8 md:mb-10 text-center md:text-left">
                     <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Danil Lobanov</h1>
                     <h2 class="text-xl md:text-2xl lg:text-3xl font-semibold mb-6">Backend Developer (C#, .NET, Go, PostgreSQL, Docker)</h2>
-                    <p class="text-base md:text-lg mb-8 max-w-lg mx-auto md:mx-0">Software Engineer with over 3 years of experience in backend development, specializing in scalable SaaS products and enterprise-grade systems (CRM, IoT). Located in Guangzhou, China.</p>
+                    <p class="text-base md:text-lg mb-8 max-w-lg mx-auto md:mx-0">Backend Developer with experience in .NET, C#, Go, and PostgreSQL. Specialized in building scalable microservices, CRM systems, and IoT platforms.</p>
                     <div class="flex flex-col sm:flex-row gap-4 sm:gap-4 justify-center md:justify-start">
+                        <a href="https://ddenvy.tech" target="_blank" class="bg-white text-purple-900 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition">
+                            <i class="fas fa-globe mr-2"></i>Website
+                        </a>
                         <a href="mailto:danil.lobanov@outlook.com" class="bg-white text-purple-900 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition">
                             <i class="fas fa-envelope mr-2"></i>Email
                         </a>
                         <a href="https://www.linkedin.com/in/envydany/" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition">
                             <i class="fab fa-linkedin mr-2"></i>LinkedIn
                         </a>
-                        <a href="Danil Lobanov (Backend dev).pdf" download class="bg-green-600 text-white px-6 py-2 rounded-full font-medium hover:bg-green-700 transition">
-                            <i class="fas fa-download mr-2"></i>Download CV
+                        <a href="https://github.com/ddenvy" target="_blank" class="bg-gray-800 text-white px-6 py-2 rounded-full font-medium hover:bg-gray-900 transition">
+                            <i class="fab fa-github mr-2"></i>GitHub
                         </a>
                     </div>
                 </div>
@@ -125,13 +128,13 @@
                 <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">About Me</h2>
                 <div class="bg-gray-50 rounded-xl p-6 md:p-8 shadow-sm">
                 <p class="text-base md:text-lg text-gray-700 mb-6">
-                    Software Engineer with over 3 years of experience in backend development, specializing in scalable SaaS products and enterprise-grade systems (CRM, IoT).
+                    Backend Developer with experience in developing core modules for high-load CRM systems and microservices for smart agriculture platforms. Specialized in .NET, C#, Go, and PostgreSQL.
                 </p>
                 <p class="text-base md:text-lg text-gray-700 mb-6">
-                    Proficient in C# (.NET), Go, PostgreSQL, microservices architecture, REST/gRPC APIs, and message brokers (RabbitMQ, MQTT). Delivered high-impact solutions for HR automation and smart container management.
+                    Proficient in building scalable REST APIs, implementing notification systems with RabbitMQ and MassTransit, and optimizing database performance with Redis caching.
                 </p>
                 <p class="text-base md:text-lg text-gray-700">
-                    Achieved significant improvements in performance, reliability, and delivery speed with comprehensive testing (~60% coverage) and Clean Architecture principles.
+                    Experienced in IoT device communication via gRPC and MQTT, with strong focus on testing (xUnit, NSubstitute, FluentAssertions) and CI/CD with GitHub Actions and Docker.
                 </p>
             </div>
             </div>
@@ -164,7 +167,55 @@
 
                 <!-- Projects Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-                <!-- Project 1: QuickMind -->
+                <!-- Project 1: Notification System -->
+                <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-0">
+                    <div class="mb-4">
+                        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Notification System</h3>
+                        <p class="text-gray-600 text-sm mb-4">Fault-tolerant notification system integrated with email and Telegram alerts using SMTP and Telegram Bot API</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">.NET</span>
+                        <span class="tech-tag bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">RabbitMQ</span>
+                        <span class="tech-tag bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Redis</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Docker</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Telegram API</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-gray-500 text-sm">
+                            <i class="fas fa-bell mr-1"></i>
+                            <span>2023</span>
+                        </div>
+                        <div class="text-gray-400">
+                            <i class="fas fa-code text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: IoT Task Scheduler -->
+                <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-0">
+                    <div class="mb-4">
+                        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">IoT Task Scheduler for Smart Containers</h3>
+                        <p class="text-gray-600 text-sm mb-4">Distributed scheduling system for smart containers controlling temperature, humidity, and lighting via gRPC</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">.NET 9</span>
+                        <span class="tech-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">gRPC</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                        <span class="tech-tag bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">MQTT</span>
+                        <span class="tech-tag bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Grafana</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-gray-500 text-sm">
+                            <i class="fas fa-microchip mr-1"></i>
+                            <span>2022</span>
+                        </div>
+                        <div class="text-gray-400">
+                            <i class="fas fa-code text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: QuickMind -->
                 <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-0">
                     <div class="mb-4">
                         <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">QuickMind</h3>
@@ -185,7 +236,7 @@
                     </div>
                 </div>
 
-                <!-- Project 2: Bank App -->
+                <!-- Project 4: Bank App -->
                 <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-0">
                     <div class="mb-4">
                         <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Bank App</h3>
@@ -202,51 +253,6 @@
                             <span>Finance</span>
                         </div>
                         <a href="https://github.com/ddenvy/bank-app" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 3: Budget Telegram Bot -->
-                <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-0">
-                    <div class="mb-4">
-                        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Budget Telegram Bot</h3>
-                        <p class="text-gray-600 text-sm mb-4">Telegram bot for personal finance management and budget tracking</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Go</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Telegram API</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center text-gray-500 text-sm">
-                            <i class="fas fa-robot mr-1"></i>
-                            <span>Bot</span>
-                        </div>
-                        <a href="https://github.com/ddenvy/budget-telegram-bot" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-
-
-
-                <!-- Project 4: Task Management System -->
-                <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-0">
-                    <div class="mb-4">
-                        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Task Management System</h3>
-                        <p class="text-gray-600 text-sm mb-4">Task management system with project creation and progress tracking capabilities</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="tech-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">C#</span>
-                        <span class="tech-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">ASP.NET Core</span>
-                        <span class="tech-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Web App</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center text-gray-500 text-sm">
-                            <i class="fas fa-tasks mr-1"></i>
-                            <span>Productivity</span>
-                        </div>
-                        <a href="https://github.com/ddenvy/Task-Management-System" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
                             <i class="fab fa-github text-xl"></i>
                         </a>
                     </div>
@@ -324,8 +330,8 @@
                     <div class="relative timeline-item">
                         <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                             <div class="flex flex-col md:flex-row justify-between mb-4">
-                                <h3 class="text-lg md:text-xl font-bold text-blue-800">Smart Container Solutions (Empire of Bloom)</h3>
-                                <div class="text-gray-600 font-medium">August 2021 – February 2023</div>
+                                <h3 class="text-lg md:text-xl font-bold text-blue-800">Empire of Bloom</h3>
+                                <div class="text-gray-600 font-medium">September 2021 – February 2023</div>
                             </div>
                             <div class="flex items-center text-gray-600 mb-4">
                                 <i class="fas fa-map-marker-alt mr-2"></i>
@@ -335,27 +341,17 @@
                                 <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">Backend Developer</span>
                             </div>
                             <p class="text-gray-700 mb-4">
-                                Developed a task management and monitoring system for a smart container device (SaaS platform for organic product cultivation, www.empireofbloom.com). Worked in a 3-person Scrum team under a technical lead focused on low-level firmware (FreeRTOS, MQTT, Modbus).
+                                Engineered microservices for a smart agriculture SaaS platform, managing automated tasks and real-time device monitoring.
                             </p>
                             <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                                <li>Built two microservices using C# and .NET 6 with REST API and gRPC for task management and monitoring</li>
-                                <li>Integrated RabbitMQ (via MassTransit) for asynchronous processing of MQTT sensor data</li>
-                                <li>Optimized PostgreSQL queries with Entity Framework Core for reporting</li>
-                                <li>Wrote tests (xUnit, NSubstitute, FluentAssertions, ~60% coverage)</li>
-                                <li>Set up CI/CD with GitHub Actions and containerization with Docker</li>
-                                <li>Documented APIs with Swagger and refactored code using Clean Architecture</li>
-                            </ul>
-                            <h4 class="font-bold text-gray-800 mb-2 mt-4">Achievements:</h4>
-                            <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                                <li>Accelerated container monitoring by 25% with RabbitMQ and MassTransit for MQTT data</li>
-                                <li>Reduced report generation time by 20% with PostgreSQL optimization and Redis caching</li>
-                                <li>Decreased production bugs by 30% through testing</li>
-                                <li>Reduced deployment time from 7 to 3 minutes with GitHub Actions and Docker</li>
-                                <li>Improved frontend integration (Vue 3, Next.js) with Swagger</li>
+                                <li>Utilized .NET 9, gRPC, and REST API to handle bi-directional communication between cloud backend and IoT edge devices</li>
+                                <li>Integrated data ingestion from MQTT sensors using RabbitMQ queues and MassTransit consumers</li>
+                                <li>Leveraged Redis and Prometheus/Grafana to enhance system observability, enabling faster incident response and bottleneck detection</li>
+                                <li>Wrote extensive test coverage using xUnit, NSubstitute, and FluentAssertions, reducing production regressions by 30%</li>
                             </ul>
                             <div class="mt-4 flex flex-wrap gap-2">
                                 <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">C#</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">.NET 6</span>
+                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">.NET 9</span>
                                 <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Go</span>
                                 <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">gRPC</span>
                                 <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
@@ -394,8 +390,8 @@
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold text-gray-800 mb-1">National Research Nuclear University MEPhI</h3>
-                                <p class="text-gray-600 mb-2">Master's Degree – Software Engineering</p>
-                                <p class="text-gray-500">2024 – 2026 | Russia, Moscow</p>
+                                <p class="text-gray-600 mb-2">Master's in Software Engineering</p>
+                                <p class="text-gray-500">Sep. 2024 – Jul. 2026 | Moscow, Russia</p>
                             </div>
                         </div>
                     </div>
@@ -407,8 +403,8 @@
                             </div>
                             <div>
                                 <h3 class="text-xl font-bold text-gray-800 mb-1">Peoples' Friendship University of Russia</h3>
-                                <p class="text-gray-600 mb-2">Bachelor's Degree – Agronomy</p>
-                                <p class="text-gray-500">2011 – 2015 | Russia, Moscow</p>
+                                <p class="text-gray-600 mb-2">Bachelor's in Agronomy</p>
+                                <p class="text-gray-500">Sep. 2011 – Jul. 2015 | Moscow, Russia</p>
                             </div>
                         </div>
                     </div>
@@ -431,69 +427,45 @@
                     </h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">C#</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">.NET Core/6/8/9</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Go</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">SQL (PostgreSQL)</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">TypeScript</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">ASP.NET Core</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Node.js</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">React</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Next.js</span>
                     </div>
                 </div>
                 
                 <!-- Column 2 -->
                 <div class="bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                     <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                        <i class="fas fa-database mr-2"></i> Databases
+                        <i class="fas fa-layer-group mr-2"></i> Frameworks
                     </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Entity Framework Core</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Redis</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">.NET 6/8/9</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">REST API</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">gRPC</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MassTransit</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">React</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Next.js</span>
                     </div>
                 </div>
                 
                 <!-- Column 3 -->
                 <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                     <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                        <i class="fas fa-exchange-alt mr-2"></i> Message Brokers
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">RabbitMQ</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MQTT (Mosquitto)</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Modbus</span>
-                    </div>
-                </div>
-                
-                <!-- Column 4 -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                        <i class="fas fa-project-diagram mr-2"></i> Architecture & Patterns
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Microservices</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Clean Architecture</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Domain-Driven Design (DDD)</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">REST API</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">gRPC</span>
-                    </div>
-                </div>
-                
-                <!-- Column 5 -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                        <i class="fas fa-server mr-2"></i> DevOps & Tools
+                        <i class="fas fa-tools mr-2"></i> Tools
                     </h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Docker</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">GitHub Actions</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Redis</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">RabbitMQ</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MQTT</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Prometheus</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Grafana</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Swagger (OpenAPI)</span>
                     </div>
                 </div>
                 
-                <!-- Column 6 -->
+                <!-- Column 4 -->
                 <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                     <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
                         <i class="fas fa-vial mr-2"></i> Testing
@@ -502,23 +474,26 @@
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">xUnit</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">NSubstitute</span>
                         <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">FluentAssertions</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">~60% coverage</span>
                     </div>
                 </div>
                 
-                <!-- Column 7 -->
+                <!-- Column 5 -->
                 <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                     <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                        <i class="fas fa-tasks mr-2"></i> Methodologies
+                        <i class="fas fa-cogs mr-2"></i> CI/CD
                     </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Scrum</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">TDD</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Gitflow</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">IoT</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Asynchronous programming</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">GitHub Actions</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Docker Compose</span>
+                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Multi-stage builds</span>
                     </div>
                 </div>
+                
+                <!-- Column 6 -->
+
+                
+                <!-- Column 7 -->
+
                 
                 <!-- Column 8 -->
                 <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
