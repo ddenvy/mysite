@@ -1,642 +1,349 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Danil Lobanov | C# / .NET Backend Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danil Lobanov | Backend Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        black: '#1a1a1a',
+                        offwhite: '#F5F5F3', 
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #2d1b4e 0%, #3c2663 50%, #4a2c73 100%);
+        body {
+            background-color: #F5F5F3;
+            color: #1a1a1a;
         }
-        .timeline-item:before {
-            content: '';
-            position: absolute;
-            left: -38px;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #3b82f6;
-            border: 4px solid #1e40af;
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: 1fr;
         }
-        .tech-tag {
-            transition: all 0.3s ease;
+        @media (min-width: 768px) {
+            .editorial-grid {
+                grid-template-columns: 3fr 7fr;
+                gap: 2rem;
+            }
         }
-        .tech-tag:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .project-card {
-            transition: all 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-        .nav-link {
+        .hover-underline-animation {
+            display: inline-block;
             position: relative;
         }
-        .nav-link:after {
+        .hover-underline-animation::after {
             content: '';
             position: absolute;
-            width: 0;
-            height: 2px;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
             bottom: 0;
             left: 0;
-            background-color: #3b82f6;
-            transition: width 0.3s ease;
+            background-color: #1a1a1a;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
         }
-        .nav-link:hover:after {
-            width: 100%;
-        }
-        
-        /* Mobile optimizations */
-        @media (max-width: 640px) {
-            .tech-tag {
-                font-size: 0.75rem;
-                padding: 0.25rem 0.5rem;
-            }
-            
-            .nav-link {
-                font-size: 0.875rem;
-                padding: 0.5rem 0.75rem;
-            }
-            
-            .gradient-bg {
-                border-radius: 0.75rem;
-            }
+        .hover-underline-animation:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
         }
     </style>
 </head>
-<body class="bg-gray-50 font-sans antialiased">
-    <!-- Header -->
-    <header class="py-4 md:py-12 lg:py-20">
-        <div class="max-w-6xl mx-auto px-4 md:px-6 gradient-bg text-white rounded-xl py-8 md:py-12 lg:py-20">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-10 text-center md:text-left">
-                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Danil Lobanov</h1>
-                    <h2 class="text-xl md:text-2xl lg:text-3xl font-semibold mb-6">C# / .NET Backend Developer</h2>
-                    <p class="text-base md:text-lg mb-8 max-w-lg mx-auto md:mx-0">C# / .NET Backend Engineer with 4+ years of experience building SaaS, B2B, and game backend systems. Specialized in microservice architectures and server-side business logic.</p>
-                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-4 justify-center md:justify-start">
-                        <a href="Danil Lobanov (Backend dev).pdf" download class="bg-green-600 text-white px-6 py-2 rounded-full font-medium hover:bg-green-700 transition flex items-center justify-center w-full sm:w-auto min-w-[140px]">
-                            <i class="fas fa-download mr-2"></i>Download CV
-                        </a>
-                        <a href="mailto:danil.lobanov@outlook.com" class="bg-white text-purple-900 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition flex items-center justify-center w-full sm:w-auto min-w-[140px]">
-                            <i class="fas fa-envelope mr-2"></i>Email
-                        </a>
-                        <a href="https://www.linkedin.com/in/envydany/" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition flex items-center justify-center w-full sm:w-auto min-w-[140px]">
-                            <i class="fab fa-linkedin mr-2"></i>LinkedIn
-                        </a>
-                        <a href="https://github.com/ddenvy" target="_blank" class="bg-gray-800 text-white px-6 py-2 rounded-full font-medium hover:bg-gray-900 transition flex items-center justify-center w-full sm:w-auto min-w-[140px]">
-                            <i class="fab fa-github mr-2"></i>GitHub
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="relative">
-                        <div class="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-purple-900 rounded-full overflow-hidden border-4 border-white shadow-xl">
-                            <img src="public/photo.jpg" alt="Danil Lobanov" class="w-full h-full object-cover">
-                        </div>
-                        <div class="absolute -bottom-5 -right-5 bg-white text-purple-900 px-4 py-2 rounded-full shadow-lg font-medium">
-                            <i class="fas fa-code mr-2"></i>Backend Developer
-                        </div>
-                    </div>
+<body class="antialiased selection:bg-black selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 mix-blend-difference text-white top-0 left-0 px-6 py-6 md:px-12 flex justify-between items-center pointer-events-none">
+        <a href="#" class="font-display font-bold text-xl uppercase tracking-wider pointer-events-auto">Danil Lobanov</a>
+        <div class="hidden md:flex gap-8 text-sm font-medium pointer-events-auto">
+            <a href="#about" class="hover:opacity-70 transition-opacity">About</a>
+            <a href="#experience" class="hover:opacity-70 transition-opacity">Experience</a>
+            <a href="#projects" class="hover:opacity-70 transition-opacity">Projects</a>
+            <a href="#skills" class="hover:opacity-70 transition-opacity">Skills</a>
+            <a href="#contact" class="hover:opacity-70 transition-opacity">Contact</a>
+        </div>
+        <div class="md:hidden pointer-events-auto">
+             <!-- Mobile Menu Icon Placeholder -->
+             <i class="fas fa-bars text-xl"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex flex-col justify-end pb-24 px-6 md:px-12 relative bg-white">
+        <!-- Image as background or stylized -->
+        <div class="absolute top-0 right-0 w-full h-full md:w-1/2 md:h-full z-0 opacity-10 md:opacity-100">
+             <img src="public/photo.jpg" alt="Danil Lobanov" class="w-full h-full object-cover grayscale md:grayscale-0 contrast-125">
+        </div>
+        
+        <div class="relative z-10 max-w-4xl pt-32 md:pt-0">
+            <p class="font-sans text-sm md:text-base mb-4 uppercase tracking-widest text-gray-500">Portfolio</p>
+            <h1 class="font-display text-6xl md:text-8xl lg:text-9xl font-bold leading-[0.9] tracking-tight mb-8">
+                BACKEND<br>
+                ENGINEER<span class="text-blue-600">.</span>
+            </h1>
+            <div class="max-w-xl">
+                <p class="text-lg md:text-xl font-light leading-relaxed mb-8">
+                    C# / .NET Specialist building robust microservice architectures and scalable server-side systems. 4+ years of experience in SaaS, B2B, and Game Backend.
+                </p>
+                <div class="flex gap-4">
+                    <a href="Danil Lobanov (Backend dev).pdf" download class="bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors inline-flex items-center gap-2">
+                        Download CV <i class="fas fa-arrow-down text-xs"></i>
+                    </a>
+                    <a href="#contact" class="border border-black px-8 py-3 rounded-full font-medium hover:bg-black hover:text-white transition-colors">
+                        Get in Touch
+                    </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-10">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="flex justify-center flex-wrap gap-2 md:gap-8 py-3 md:py-4">
-                <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2">About</a>
-                <a href="#projects" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2">Projects</a>
-                <a href="#experience" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2">Experience</a>
-                <a href="#education" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2">Education</a>
-                <a href="#skills" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2">Skills</a>
-                <a href="#additional" class="nav-link text-gray-700 hover:text-blue-600 px-3 py-2">Additional</a>
-            </div>
-        </div>
-    </nav>
-
     <!-- About Section -->
-    <section id="about" class="py-8 md:py-16">
-        <div class="max-w-6xl mx-auto px-4 md:px-6">
-            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">About Me</h2>
-                <div class="bg-gray-50 rounded-xl p-6 md:p-8 shadow-sm">
-                <p class="text-base md:text-lg text-gray-700 mb-6">
-                    C# / .NET Backend Engineer with 4+ years of experience building SaaS, B2B, and game backend systems. Specialized in microservice architectures and server-side business logic.
+    <section id="about" class="px-6 md:px-12 py-24 border-b border-gray-200">
+        <div class="editorial-grid">
+            <h2 class="font-display text-3xl font-bold uppercase mb-8 md:mb-0 sticky top-24 self-start">01. About</h2>
+            <div class="space-y-8 font-light text-lg md:text-xl leading-relaxed max-w-3xl">
+                <p>
+                    I am a Backend Engineer based in Tbilisi, Georgia, specializing in the .NET ecosystem. My focus is on designing scalable, secure, and high-performance backend systems for diverse industries ranging from Gaming to CRM platforms.
                 </p>
-                <p class="text-base md:text-lg text-gray-700 mb-6">
-                    Proven track record of: <strong>Improving system performance by up to 25%</strong>. <strong>Reducing production bugs and delivery errors by 20–30%</strong>. Designing scalable and secure backend services for Unity-based games and enterprise platforms.
+                <p>
+                    I have a proven track record of improving system performance (up to 25%) and significantly reducing production bugs. My expertise lies in distributed systems, event-driven architectures, and implementing complex business logic.
                 </p>
-                <p class="text-base md:text-lg text-gray-700">
-                    Strong background in distributed systems, event-driven architectures, and backend architecture design. Experienced in building REST and gRPC APIs, implementing asynchronous event processing, and ensuring protection against invalid client actions.
-                </p>
-            </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-8 md:py-16">
-        <div class="max-w-6xl mx-auto px-4 md:px-6">
-            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">Projects</h2>
-                
-                <!-- GitHub Profile -->
-                <div class="mb-12">
-                <div class="bg-gradient-to-r from-purple-900 to-gray-900 rounded-xl p-6 shadow-lg text-white">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center">
-                            <i class="fab fa-github text-4xl mr-4"></i>
-                            <div>
-                                <h3 class="text-xl font-bold">GitHub Profile</h3>
-                                <p class="text-gray-300">@ddenvy</p>
-                            </div>
-                        </div>
-                        <a href="https://github.com/ddenvy" target="_blank" class="bg-white text-gray-800 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition">
-                            View Profile
-                        </a>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8">
+                    <div>
+                        <span class="block text-4xl font-display font-bold mb-2">4+</span>
+                        <span class="text-sm text-gray-500 uppercase tracking-wider">Years Exp.</span>
+                    </div>
+                    <div>
+                        <span class="block text-4xl font-display font-bold mb-2">25%</span>
+                        <span class="text-sm text-gray-500 uppercase tracking-wider">Perf. Boost</span>
+                    </div>
+                    <div>
+                        <span class="block text-4xl font-display font-bold mb-2">2</span>
+                        <span class="text-sm text-gray-500 uppercase tracking-wider">Languages</span>
+                    </div>
+                    <div>
+                        <span class="block text-4xl font-display font-bold mb-2">∞</span>
+                        <span class="text-sm text-gray-500 uppercase tracking-wider">Commitment</span>
                     </div>
                 </div>
-            </div>
-
-                <!-- Projects Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-                <!-- Project 1: Notification System -->
-                <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-0">
-                    <div class="mb-4">
-                        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Notification System</h3>
-                        <p class="text-gray-600 text-sm mb-4">Fault-tolerant notification system integrated with email and Telegram alerts using SMTP and Telegram Bot API</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="tech-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">.NET</span>
-                        <span class="tech-tag bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">RabbitMQ</span>
-                        <span class="tech-tag bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Redis</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Docker</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Telegram API</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center text-gray-500 text-sm">
-                            <i class="fas fa-bell mr-1"></i>
-                            <span>2023</span>
-                        </div>
-                        <div class="text-gray-400">
-                            <i class="fas fa-code text-xl"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: IoT Task Scheduler -->
-                <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-0">
-                    <div class="mb-4">
-                        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">IoT Task Scheduler for Smart Containers</h3>
-                        <p class="text-gray-600 text-sm mb-4">Distributed scheduling system for smart containers controlling temperature, humidity, and lighting via gRPC</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="tech-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">.NET 9</span>
-                        <span class="tech-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">gRPC</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-                        <span class="tech-tag bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">MQTT</span>
-                        <span class="tech-tag bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Grafana</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center text-gray-500 text-sm">
-                            <i class="fas fa-microchip mr-1"></i>
-                            <span>2022</span>
-                        </div>
-                        <div class="text-gray-400">
-                            <i class="fas fa-code text-xl"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: QuickMind -->
-                <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-0">
-                    <div class="mb-4">
-                        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">QuickMind</h3>
-                        <p class="text-gray-600 text-sm mb-4">Flashcard learning application that helps efficiently memorize information using spaced repetition</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="tech-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">C#</span>
-                        <span class="tech-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Desktop App</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center text-gray-500 text-sm">
-                            <i class="fas fa-star mr-1"></i>
-                            <span>Education</span>
-                        </div>
-                        <a href="https://github.com/ddenvy/QuickMind" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 4: Bank App -->
-                <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-0">
-                    <div class="mb-4">
-                        <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">Bank App</h3>
-                        <p class="text-gray-600 text-sm mb-4">Banking application with account management and transaction processing features</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="tech-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Go</span>
-                        <span class="tech-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">C#</span>
-                        <span class="tech-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Backend</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center text-gray-500 text-sm">
-                            <i class="fas fa-university mr-1"></i>
-                            <span>Finance</span>
-                        </div>
-                        <a href="https://github.com/ddenvy/bank-app" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-8 md:py-16">
-        <div class="max-w-6xl mx-auto px-4 md:px-6">
-            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">Work Experience</h2>
-                
-                <div class="relative">
-                <!-- Timeline -->
-                <div class="border-l-2 border-blue-400 pl-8 space-y-12">
-                    <!-- Job 1: Game Backend -->
-                    <div class="relative timeline-item">
-                        <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                            <div class="flex flex-col md:flex-row justify-between mb-4">
-                                <h3 class="text-lg md:text-xl font-bold text-blue-800">Valletta Software Development LTD</h3>
-                                <div class="text-gray-600 font-medium">May 2024 – Present</div>
-                            </div>
-                            <div class="flex items-center text-gray-600 mb-4">
-                                <i class="fas fa-map-marker-alt mr-2"></i>
-                                <span>Tbilisi, Georgia</span>
-                                <a href="https://www.vallettasoftware.com" target="_blank" class="ml-2 text-blue-600 hover:underline">www.vallettasoftware.com</a>
-                            </div>
-                            <div class="mb-4">
-                                <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">Game Backend (Unity Project)</span>
-                            </div>
-                            <p class="text-gray-700 mb-4">
-                                Designed and developed backend services for a Unity-based game using a microservice architecture with a strong focus on scalability, reliability, and protection against invalid client actions.
-                            </p>
-                            <h4 class="font-bold text-gray-800 mb-2 mt-4">Responsibilities:</h4>
-                            <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                                <li>Designed and implemented microservice-based backend services using C# and .NET</li>
-                                <li>Developed server-side logic for game mechanics: matches, player progression, PvE/PvP flows, in-game events, notifications</li>
-                                <li>Built REST and gRPC APIs for communication between Unity clients and backend services</li>
-                                <li>Implemented asynchronous event processing using RabbitMQ and MassTransit</li>
-                                <li>Added server-side validation to prevent cheating and client–server desynchronization</li>
-                                <li>Participated in backend architecture design for high request throughput and future user growth</li>
-                            </ul>
-                            <div class="mt-4 flex flex-wrap gap-2">
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">C#</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">.NET 8</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">EF Core</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">RabbitMQ</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MassTransit</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Redis</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Docker</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">GitHub</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Swagger</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Prometheus</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Grafana</span>
-                            </div>
-                        </div>
+    <section id="experience" class="px-6 md:px-12 py-24 border-b border-gray-200">
+        <div class="editorial-grid">
+            <h2 class="font-display text-3xl font-bold uppercase mb-8 md:mb-0 sticky top-24 self-start">02. Experience</h2>
+            <div class="space-y-16">
+                <!-- Job 1 -->
+                <div class="group">
+                    <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-4 border-b border-black pb-4">
+                        <h3 class="font-display text-2xl font-bold">Valletta Software Development</h3>
+                        <span class="text-gray-500 font-mono">May 2024 — Present</span>
                     </div>
-                    
-                    <!-- Job 2: CRM Project -->
-                    <div class="relative timeline-item">
-                        <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                            <div class="flex flex-col md:flex-row justify-between mb-4">
-                                <h3 class="text-lg md:text-xl font-bold text-blue-800">Valletta Software Development LTD</h3>
-                                <div class="text-gray-600 font-medium">March 2023 – Jun 2024 (2 years 10 months)</div>
-                            </div>
-                            <div class="flex items-center text-gray-600 mb-4">
-                                <i class="fas fa-map-marker-alt mr-2"></i>
-                                <span>Tbilisi, Georgia</span>
-                                <a href="https://www.vallettasoftware.com" target="_blank" class="ml-2 text-blue-600 hover:underline">www.vallettasoftware.com</a>
-                            </div>
-                            <div class="mb-4">
-                                <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">C# Backend Developer (CRM Project)</span>
-                            </div>
-                            <p class="text-gray-700 mb-4">
-                                Worked on a CRM platform for automating recruitment and HR processes for a European B2B client.
-                            </p>
-                            <h4 class="font-bold text-gray-800 mb-2 mt-4">Responsibilities:</h4>
-                            <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                                <li>Developed a candidate management module (CRUD operations, filtering, role-based access control) using C# and ASP.NET Core</li>
-                                <li>Participated in migration from .NET 6 to .NET 8</li>
-                                <li>Designed and implemented REST APIs for the admin panel and a notification microservice</li>
-                                <li>Integrated SMTP and Telegram notifications via RabbitMQ using MassTransit, with retry policies implemented via Polly</li>
-                                <li>Optimized PostgreSQL queries using Entity Framework Core for analytics and reporting</li>
-                                <li>Wrote unit and integration tests (xUnit, NSubstitute, FluentAssertions), achieving ~60% coverage</li>
-                            </ul>
-                            <h4 class="font-bold text-gray-800 mb-2 mt-4">Achievements:</h4>
-                            <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                                <li>Improved analytics report performance by 25% through query optimization and Redis caching</li>
-                                <li>Reduced notification delivery errors by 20% and increased delivery speed by 35%</li>
-                            </ul>
-                            <div class="mt-4 flex flex-wrap gap-2">
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">C#</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">.NET 6/8</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">ASP.NET Core</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">EF Core</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">RabbitMQ</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MassTransit</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Redis</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Docker</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">GitHub Actions</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Swagger</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Prometheus</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Grafana</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">xUnit</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Job 3: Empire of Bloom -->
-                    <div class="relative timeline-item">
-                        <div class="project-card bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                            <div class="flex flex-col md:flex-row justify-between mb-4">
-                                <h3 class="text-lg md:text-xl font-bold text-blue-800">Empire Of Bloom</h3>
-                                <div class="text-gray-600 font-medium">September 2021 – February 2023 (1 year 6 months)</div>
-                            </div>
-                            <div class="flex items-center text-gray-600 mb-4">
-                                <i class="fas fa-map-marker-alt mr-2"></i>
-                                <span>Guangzhou, China</span>
-                                <a href="https://www.empireofbloom.com" target="_blank" class="ml-2 text-blue-600 hover:underline">www.empireofbloom.com</a>
-                            </div>
-                            <div class="mb-4">
-                                <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">C# Backend Developer</span>
-                            </div>
-                            <p class="text-gray-700 mb-4">
-                                Developed a task management and monitoring system for an IoT "smart container" device. Worked in a 3-person Scrum team led by a low-level firmware-focused tech lead (FreeRTOS, MQTT, Modbus).
-                            </p>
-                            <h4 class="font-bold text-gray-800 mb-2 mt-4">Responsibilities:</h4>
-                            <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                                <li>Designed and implemented two backend microservices using C# and .NET 6</li>
-                                <li>Built REST and gRPC APIs for task management and real-time monitoring</li>
-                                <li>Integrated RabbitMQ (via MassTransit) for asynchronous processing of MQTT sensor data</li>
-                                <li>Optimized PostgreSQL queries using Entity Framework Core for reporting</li>
-                            </ul>
-                            <h4 class="font-bold text-gray-800 mb-2 mt-4">Achievements:</h4>
-                            <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                                <li>Increased monitoring performance by 25% through asynchronous processing</li>
-                                <li>Reduced production bugs by 30% by improving test coverage and stability</li>
-                            </ul>
-                            <div class="mt-4 flex flex-wrap gap-2">
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">C#</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">.NET</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Go</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">gRPC</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">EF Core</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">RabbitMQ</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MassTransit</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MQTT (Mosquitto)</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Modbus</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Docker</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">GitHub Actions</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Prometheus</span>
-                                <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Grafana</span>
-                            </div>
-                        </div>
+                    <h4 class="text-xl mb-4 font-medium">Game Backend Developer</h4>
+                    <p class="text-gray-600 mb-6 max-w-3xl">
+                        Designed and developed backend services for a Unity-based game using microservice architecture. Focused on scalability, reliability, and anti-cheat mechanisms.
+                    </p>
+                    <ul class="space-y-2 list-disc list-inside text-gray-700 marker:text-black">
+                        <li>Built REST and gRPC APIs for Unity client communication.</li>
+                        <li>Implemented async event processing with RabbitMQ and MassTransit.</li>
+                        <li>Designed microservices using C# and .NET 8.</li>
+                        <li>Server-side validation to prevent cheating and desync.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <span class="border border-gray-300 px-3 py-1 rounded-full text-xs uppercase tracking-wide">.NET 8</span>
+                        <span class="border border-gray-300 px-3 py-1 rounded-full text-xs uppercase tracking-wide">RabbitMQ</span>
+                        <span class="border border-gray-300 px-3 py-1 rounded-full text-xs uppercase tracking-wide">Redis</span>
                     </div>
                 </div>
-            </div>
+
+                <!-- Job 2 -->
+                <div class="group">
+                    <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-4 border-b border-gray-300 pb-4 group-hover:border-black transition-colors">
+                        <h3 class="font-display text-2xl font-bold">Valletta Software Development</h3>
+                        <span class="text-gray-500 font-mono">Mar 2023 — Jun 2024</span>
+                    </div>
+                    <h4 class="text-xl mb-4 font-medium">C# Backend Developer (CRM)</h4>
+                    <p class="text-gray-600 mb-6 max-w-3xl">
+                        Developed a comprehensive CRM platform for recruitment automation. Migrated systems from .NET 6 to .NET 8 and improved analytics performance.
+                    </p>
+                    <ul class="space-y-2 list-disc list-inside text-gray-700 marker:text-black">
+                        <li>Candidate management module with complex filtering.</li>
+                        <li>Optimized PostgreSQL queries for 25% faster reporting.</li>
+                        <li>Reduced notification errors by 20% with retry policies.</li>
+                        <li>High test coverage with xUnit and FluentAssertions.</li>
+                    </ul>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="group">
+                    <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-4 border-b border-gray-300 pb-4 group-hover:border-black transition-colors">
+                        <h3 class="font-display text-2xl font-bold">Empire Of Bloom</h3>
+                        <span class="text-gray-500 font-mono">Sep 2021 — Feb 2023</span>
+                    </div>
+                    <h4 class="text-xl mb-4 font-medium">IoT Backend Developer</h4>
+                    <p class="text-gray-600 mb-6 max-w-3xl">
+                        Developed task management and monitoring for smart container devices. Worked closely with firmware teams on MQTT and Modbus integrations.
+                    </p>
+                    <ul class="space-y-2 list-disc list-inside text-gray-700 marker:text-black">
+                        <li>Real-time monitoring via gRPC.</li>
+                        <li>Processed sensor data asynchronously with RabbitMQ.</li>
+                        <li>Reduced production bugs by 30% through improved testing.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="py-8 md:py-16">
-        <div class="max-w-6xl mx-auto px-4 md:px-6">
-            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">Education</h2>
-                <div class="space-y-6">
-                    <div class="bg-gray-50 rounded-xl p-6 md:p-8 shadow-sm">
-                        <div class="flex items-start">
-                            <div class="bg-blue-100 p-4 rounded-full mr-6">
-                                <i class="fas fa-graduation-cap text-blue-800 text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-800 mb-1">M.Sc. in Software Engineering (in progress)</h3>
-                                <p class="text-gray-600 mb-2">National Research Nuclear University MEPhI</p>
-                                <p class="text-gray-500">Expected 2026 | Moscow</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gray-50 rounded-xl p-6 md:p-8 shadow-sm">
-                        <div class="flex items-start">
-                            <div class="bg-green-100 p-4 rounded-full mr-6">
-                                <i class="fas fa-graduation-cap text-green-800 text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-800 mb-1">B.Sc. in Agronomy</h3>
-                                <p class="text-gray-600 mb-2">Peoples' Friendship University of Russia (RUDN)</p>
-                                <p class="text-gray-500">2011 - 2015 | Moscow</p>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Projects Section -->
+    <section id="projects" class="px-6 md:px-12 py-24 bg-white">
+        <h2 class="font-display text-3xl font-bold uppercase mb-16">03. Selected Projects</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Project 1 -->
+            <a href="https://github.com/ddenvy" target="_blank" class="group block">
+                <div class="bg-offwhite aspect-video rounded-sm mb-6 flex items-center justify-center overflow-hidden relative">
+                    <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                    <i class="fas fa-bell text-6xl text-gray-300 group-hover:scale-110 transition-transform duration-500"></i>
                 </div>
-            </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-2xl font-display font-bold mb-2 group-hover:underline">Notification System</h3>
+                        <p class="text-gray-600 mb-4 max-w-md">Fault-tolerant notification system with Email and Telegram integration. Built for reliability.</p>
+                        <div class="flex flex-wrap gap-2 text-sm font-mono text-gray-500">
+                            <span>.NET</span> / <span>RabbitMQ</span> / <span>Redis</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                </div>
+            </a>
+
+            <!-- Project 2 -->
+            <a href="https://github.com/ddenvy" target="_blank" class="group block">
+                <div class="bg-offwhite aspect-video rounded-sm mb-6 flex items-center justify-center overflow-hidden relative">
+                    <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                    <i class="fas fa-microchip text-6xl text-gray-300 group-hover:scale-110 transition-transform duration-500"></i>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-2xl font-display font-bold mb-2 group-hover:underline">IoT Task Scheduler</h3>
+                        <p class="text-gray-600 mb-4 max-w-md">Distributed scheduling for smart containers controlling environment variables via gRPC.</p>
+                        <div class="flex flex-wrap gap-2 text-sm font-mono text-gray-500">
+                            <span>gRPC</span> / <span>PostgreSQL</span> / <span>MQTT</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                </div>
+            </a>
+
+            <!-- Project 3 -->
+            <a href="https://github.com/ddenvy/QuickMind" target="_blank" class="group block">
+                <div class="bg-offwhite aspect-video rounded-sm mb-6 flex items-center justify-center overflow-hidden relative">
+                    <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                    <i class="fas fa-brain text-6xl text-gray-300 group-hover:scale-110 transition-transform duration-500"></i>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-2xl font-display font-bold mb-2 group-hover:underline">QuickMind</h3>
+                        <p class="text-gray-600 mb-4 max-w-md">Flashcard learning app using spaced repetition algorithms. Desktop application.</p>
+                        <div class="flex flex-wrap gap-2 text-sm font-mono text-gray-500">
+                            <span>C#</span> / <span>WPF</span> / <span>Education</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                </div>
+            </a>
+            
+            <!-- Project 4 -->
+            <a href="https://github.com/ddenvy/bank-app" target="_blank" class="group block">
+                <div class="bg-offwhite aspect-video rounded-sm mb-6 flex items-center justify-center overflow-hidden relative">
+                    <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                    <i class="fas fa-university text-6xl text-gray-300 group-hover:scale-110 transition-transform duration-500"></i>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-2xl font-display font-bold mb-2 group-hover:underline">Bank App</h3>
+                        <p class="text-gray-600 mb-4 max-w-md">Banking application backend with account management and secure transactions.</p>
+                        <div class="flex flex-wrap gap-2 text-sm font-mono text-gray-500">
+                            <span>Go</span> / <span>C#</span> / <span>Finance</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                </div>
+            </a>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-8 md:py-16">
-        <div class="max-w-6xl mx-auto px-4 md:px-6">
-            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">Skills</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-                <!-- Column 1: Languages -->
-                <div class="bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                        <i class="fas fa-code mr-2"></i> Languages
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">C#</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Go</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">TypeScript</span>
+    <section id="skills" class="px-6 md:px-12 py-24 border-t border-gray-200">
+        <div class="editorial-grid">
+            <h2 class="font-display text-3xl font-bold uppercase mb-8 md:mb-0 sticky top-24 self-start">04. Capabilities</h2>
+            <div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+                    <div>
+                        <h3 class="text-sm font-bold uppercase tracking-widest mb-4 border-b border-black pb-2">Core Tech</h3>
+                        <ul class="space-y-2 text-lg">
+                            <li>C# / .NET 8</li>
+                            <li>ASP.NET Core</li>
+                            <li>Go (Golang)</li>
+                            <li>TypeScript</li>
+                            <li>PostgreSQL</li>
+                            <li>Redis</li>
+                        </ul>
                     </div>
-                </div>
-                
-                <!-- Column 2: Frameworks & Platforms -->
-                <div class="bg-gray-50 rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                        <i class="fas fa-layer-group mr-2"></i> Frameworks & Platforms
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">.NET</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">ASP.NET Core</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Unity</span>
+                    <div>
+                        <h3 class="text-sm font-bold uppercase tracking-widest mb-4 border-b border-black pb-2">Architecture</h3>
+                        <ul class="space-y-2 text-lg">
+                            <li>Microservices</li>
+                            <li>Event-Driven</li>
+                            <li>Clean Architecture</li>
+                            <li>DDD</li>
+                            <li>REST & gRPC</li>
+                        </ul>
                     </div>
-                </div>
-                
-                <!-- Column 3: Databases -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                        <i class="fas fa-database mr-2"></i> Databases
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MySQL</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Redis</span>
+                    <div>
+                        <h3 class="text-sm font-bold uppercase tracking-widest mb-4 border-b border-black pb-2">Tools & DevOps</h3>
+                        <ul class="space-y-2 text-lg">
+                            <li>Docker & K8s</li>
+                            <li>RabbitMQ</li>
+                            <li>MassTransit</li>
+                            <li>GitHub Actions</li>
+                            <li>Grafana / Prometheus</li>
+                        </ul>
                     </div>
-                </div>
-                
-                <!-- Column 4: Architecture -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                        <i class="fas fa-sitemap mr-2"></i> Architecture
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Microservices</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Clean Architecture</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">DDD</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Event-Driven Systems</span>
-                    </div>
-                </div>
-                
-                <!-- Column 5: Messaging -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                        <i class="fas fa-envelope mr-2"></i> Messaging
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">RabbitMQ</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MassTransit</span>
-                    </div>
-                </div>
-                
-                <!-- Column 6: APIs -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                        <i class="fas fa-plug mr-2"></i> APIs
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">REST</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">gRPC</span>
-                    </div>
-                </div>
-                
-                <!-- Column 7: DevOps & Tools -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                        <i class="fas fa-tools mr-2"></i> DevOps & Tools
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Docker</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Docker Compose</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Kubernetes</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">GitHub Actions</span>
-                    </div>
-                </div>
-                
-                <!-- Column 8: Monitoring -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                        <i class="fas fa-chart-line mr-2"></i> Monitoring
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Prometheus</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Grafana</span>
-                    </div>
-                </div>
-                
-                <!-- Column 9: Testing -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                        <i class="fas fa-vial mr-2"></i> Testing
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">xUnit</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">NSubstitute</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">FluentAssertions</span>
-                    </div>
-                </div>
-                
-                <!-- Column 10: Languages (spoken) -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                        <i class="fas fa-language mr-2"></i> Languages (Spoken)
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Russian (Native)</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">English (C1 - Advanced)</span>
-                        <span class="tech-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Chinese (B1 - Intermediate)</span>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Additional Information Section -->
-    <section id="additional" class="py-8 md:py-16">
-        <div class="max-w-6xl mx-auto px-4 md:px-6">
-            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">Additional Information</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                    <!-- Work Preferences -->
-                    <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                        <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                            <i class="fas fa-briefcase mr-2"></i> Work Preferences
-                        </h3>
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-green-600 mr-2 mt-1"></i>
-                                <span>Open to remote-only opportunities</span>
+                    <div>
+                        <h3 class="text-sm font-bold uppercase tracking-widest mb-4 border-b border-black pb-2">Education</h3>
+                        <ul class="space-y-4">
+                            <li>
+                                <div class="font-bold">M.Sc. Software Engineering</div>
+                                <div class="text-sm text-gray-500">MEPhI (2026 Expected)</div>
                             </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-times-circle text-red-600 mr-2 mt-1"></i>
-                                <span>Not interested in: banking, crypto, military-related products, alcohol or tobacco industries</span>
+                            <li>
+                                <div class="font-bold">B.Sc. Agronomy</div>
+                                <div class="text-sm text-gray-500">RUDN (2015)</div>
                             </li>
                         </ul>
                     </div>
-                    
-                    <!-- Interests -->
-                    <div class="bg-gray-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                        <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
-                            <i class="fas fa-heart mr-2"></i> Interests & Hobbies
-                        </h3>
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-center">
-                                <i class="fas fa-code text-blue-600 mr-2"></i>
-                                <span>Open-source contributor</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-gamepad text-blue-600 mr-2"></i>
-                                <span>Game development enthusiast</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-music text-blue-600 mr-2"></i>
-                                <span>Audio engineering</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-table-tennis text-blue-600 mr-2"></i>
-                                <span>Table tennis</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-play-circle text-blue-600 mr-2"></i>
-                                <span>Gaming</span>
-                            </li>
+                    <div>
+                        <h3 class="text-sm font-bold uppercase tracking-widest mb-4 border-b border-black pb-2">Languages</h3>
+                        <ul class="space-y-2 text-lg">
+                            <li>Russian <span class="text-gray-500 text-sm">(Native)</span></li>
+                            <li>English <span class="text-gray-500 text-sm">(Advanced C1)</span></li>
+                            <li>Chinese <span class="text-gray-500 text-sm">(Intermediate B1)</span></li>
                         </ul>
                     </div>
                 </div>
@@ -644,66 +351,32 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-4 md:py-8">
-        <div class="max-w-6xl mx-auto px-4 md:px-6 gradient-bg text-white rounded-xl py-6 md:py-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <h3 class="text-xl font-bold">Danil Lobanov</h3>
-                    <p class="text-purple-300">C# / .NET Backend Developer</p>
-                </div>
-                <div class="flex space-x-6">
-                    <a href="mailto:danil.lobanov@outlook.com" class="text-white hover:text-purple-300 transition">
-                        <i class="fas fa-envelope text-2xl"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/envydany/" target="_blank" class="text-white hover:text-purple-300 transition">
-                        <i class="fab fa-linkedin text-2xl"></i>
-                    </a>
-                    <a href="https://github.com/ddenvy" target="_blank" class="text-white hover:text-purple-300 transition">
-                        <i class="fab fa-github text-2xl"></i>
-                    </a>
-                    <a href="Danil Lobanov (Backend dev).pdf" download class="text-white hover:text-purple-300 transition">
-                        <i class="fas fa-download text-2xl"></i>
-                    </a>
-                </div>
+    <!-- Footer / Contact -->
+    <footer id="contact" class="bg-black text-white px-6 md:px-12 py-24">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="uppercase tracking-widest mb-8 text-gray-400">What's Next?</p>
+            <h2 class="font-display text-5xl md:text-7xl font-bold mb-12">Let's work together.</h2>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-16">
+                <a href="mailto:danil.lobanov@outlook.com" class="bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-200 transition-colors w-full md:w-auto">
+                    danil.lobanov@outlook.com
+                </a>
+                <a href="https://www.linkedin.com/in/envydany/" target="_blank" class="border border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-black transition-colors w-full md:w-auto">
+                    LinkedIn Profile
+                </a>
             </div>
-            <div class="border-t border-purple-800 mt-8 pt-6 text-center text-purple-300">
-                <p>&copy; 2024 Danil Lobanov. All rights reserved.</p>
+            
+            <div class="flex justify-center gap-8 text-2xl mb-12">
+                <a href="https://github.com/ddenvy" class="hover:text-gray-300 transition-colors"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/envydany/" class="hover:text-gray-300 transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:danil.lobanov@outlook.com" class="hover:text-gray-300 transition-colors"><i class="fas fa-envelope"></i></a>
+            </div>
+            
+            <div class="text-gray-500 text-sm">
+                &copy; 2024 Danil Lobanov. Design inspired by Ace & Tate.
             </div>
         </div>
     </footer>
 
-    <!-- Back to top button -->
-    <button id="backToTop" class="fixed bottom-8 right-8 bg-purple-900 text-white w-12 h-12 rounded-full shadow-lg hidden">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <script>
-        // Back to top button
-        const backToTopButton = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('hidden');
-            } else {
-                backToTopButton.classList.add('hidden');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
