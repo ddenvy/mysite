@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danil Lobanov | Backend Developer</title>
+    <title>Danil Lobanov | AI-First Product Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,6 +61,192 @@
             transform: scaleX(1);
             transform-origin: bottom left;
         }
+
+        /* ========== PROJECT ANIMATIONS ========== */
+
+        /* NEXUS - AI Dashboard */
+        @keyframes nexus-pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        @keyframes nexus-bar-grow {
+            0% { height: 20%; }
+            50% { height: 80%; }
+            100% { height: 40%; }
+        }
+        @keyframes nexus-line-draw {
+            0% { stroke-dashoffset: 200; }
+            100% { stroke-dashoffset: 0; }
+        }
+        @keyframes nexus-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+        .nexus-dot { animation: nexus-pulse 2s ease-in-out infinite; }
+        .nexus-bar { animation: nexus-bar-grow 3s ease-in-out infinite; }
+        .nexus-card { animation: nexus-float 4s ease-in-out infinite; }
+        .nexus-line {
+            stroke-dasharray: 200;
+            animation: nexus-line-draw 3s ease-in-out infinite alternate;
+        }
+
+        /* ALLO - VoIP Call */
+        @keyframes allo-ripple {
+            0% { transform: scale(0.8); opacity: 0.6; }
+            100% { transform: scale(2.5); opacity: 0; }
+        }
+        @keyframes allo-pulse-ring {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.6); opacity: 0; }
+        }
+        @keyframes allo-slide-up {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .allo-ripple {
+            animation: allo-ripple 2s ease-out infinite;
+        }
+        .allo-ripple-delay {
+            animation: allo-ripple 2s ease-out infinite 0.6s;
+        }
+        .allo-ripple-delay2 {
+            animation: allo-ripple 2s ease-out infinite 1.2s;
+        }
+        .allo-ring {
+            animation: allo-pulse-ring 1.5s ease-out infinite;
+        }
+        .allo-incoming {
+            animation: allo-slide-up 0.5s ease-out 1s both;
+        }
+
+        /* DEVCHAT - Chat Messages */
+        @keyframes chat-typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-8px); }
+        }
+        @keyframes chat-msg-in {
+            0% { transform: translateX(-20px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes chat-msg-out {
+            0% { transform: translateX(20px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        .chat-dot { animation: chat-typing 1.2s ease-in-out infinite; }
+        .chat-dot:nth-child(2) { animation-delay: 0.15s; }
+        .chat-dot:nth-child(3) { animation-delay: 0.3s; }
+        .chat-msg-in { animation: chat-msg-in 0.4s ease-out both; }
+        .chat-msg-out { animation: chat-msg-out 0.4s ease-out both; }
+
+        /* THANKS LAOSHI - Flashcard */
+        @keyframes card-flip {
+            0% { transform: rotateY(0deg); }
+            40% { transform: rotateY(90deg); }
+            60% { transform: rotateY(90deg); }
+            100% { transform: rotateY(0deg); }
+        }
+        @keyframes card-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+            50% { box-shadow: 0 0 30px 5px rgba(59, 130, 246, 0.3); }
+        }
+        @keyframes char-appear {
+            0% { opacity: 0; transform: scale(0.5); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .laoshi-card {
+            animation: card-flip 4s ease-in-out infinite;
+            transform-style: preserve-3d;
+        }
+        .laoshi-glow {
+            animation: card-glow 4s ease-in-out infinite;
+        }
+        .laoshi-char {
+            animation: char-appear 0.6s ease-out both;
+        }
+
+        /* GODHUNTER - Terminal Scan */
+        @keyframes scan-line {
+            0% { top: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        @keyframes terminal-blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        @keyframes progress-fill {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        @keyframes text-reveal {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+        .gh-scan {
+            animation: scan-line 3s linear infinite;
+        }
+        .gh-cursor {
+            animation: terminal-blink 0.8s step-end infinite;
+        }
+        .gh-progress {
+            animation: progress-fill 3s ease-in-out infinite;
+        }
+        .gh-text {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: text-reveal 2s steps(30) infinite alternate;
+        }
+
+        /* GAMEDEV - Rhythm Game */
+        @keyframes note-fall {
+            0% { transform: translateY(-100%); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(400%); opacity: 0; }
+        }
+        @keyframes beat-flash {
+            0%, 90%, 100% { opacity: 0.3; }
+            95% { opacity: 1; }
+        }
+        @keyframes lane-glow {
+            0%, 100% { opacity: 0.1; }
+            50% { opacity: 0.4; }
+        }
+        .game-note {
+            animation: note-fall 2s linear infinite;
+        }
+        .game-note-delay { animation-delay: 0.5s; }
+        .game-note-delay2 { animation-delay: 1s; }
+        .game-note-delay3 { animation-delay: 1.5s; }
+        .game-beat {
+            animation: beat-flash 0.5s ease-in-out infinite;
+        }
+        .game-lane {
+            animation: lane-glow 1s ease-in-out infinite;
+        }
+
+        /* Pause animation on hover */
+        .project-card:hover .nexus-dot,
+        .project-card:hover .nexus-bar,
+        .project-card:hover .nexus-card,
+        .project-card:hover .nexus-line,
+        .project-card:hover .allo-ripple,
+        .project-card:hover .allo-ring,
+        .project-card:hover .chat-dot,
+        .project-card:hover .chat-msg-in,
+        .project-card:hover .chat-msg-out,
+        .project-card:hover .laoshi-card,
+        .project-card:hover .laoshi-glow,
+        .project-card:hover .gh-scan,
+        .project-card:hover .gh-cursor,
+        .project-card:hover .gh-progress,
+        .project-card:hover .gh-text,
+        .project-card:hover .game-note,
+        .project-card:hover .game-beat,
+        .project-card:hover .game-lane {
+            animation-play-state: paused;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-black selection:text-white">
@@ -76,29 +262,28 @@
             <a href="#contact" class="hover:opacity-70 transition-opacity">Contact</a>
         </div>
         <div class="md:hidden pointer-events-auto">
-             <!-- Mobile Menu Icon Placeholder -->
              <i class="fas fa-bars text-xl"></i>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="min-h-screen flex flex-col justify-end pb-24 px-6 md:px-12 relative bg-white">
-        <!-- Image as background or stylized -->
         <div class="absolute top-0 right-0 w-full h-full md:w-1/2 md:h-full z-0 opacity-10 md:opacity-100">
              <img src="public/photo.jpg" alt="Danil Lobanov" class="w-full h-full object-cover grayscale md:grayscale-0 contrast-125">
         </div>
         
         <div class="relative z-10 max-w-4xl pt-32 md:pt-0">
             <p class="font-sans text-sm md:text-base mb-4 uppercase tracking-widest text-gray-500">Portfolio</p>
-            <h1 class="font-display text-6xl md:text-8xl lg:text-9xl font-bold leading-[0.9] tracking-tight mb-8">
-                BACKEND<br>
+            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tight mb-8">
+                AI-FIRST<br>
+                PRODUCT<br>
                 ENGINEER<span class="text-blue-600">.</span>
             </h1>
             <div class="max-w-xl">
                 <p class="text-lg md:text-xl font-light leading-relaxed mb-8">
-                    C# / .NET Specialist building robust microservice architectures and scalable server-side systems. 4+ years of experience in SaaS, B2B, and Game Backend.
+                    Product-minded engineer who ships. I take features from raw idea to production — across GameDev, AgriTech, HR Tech, and IoT. AI tools are my daily accelerators, not crutches.
                 </p>
-                <div class="flex gap-4">
+                <div class="flex gap-4 flex-wrap">
                     <a href="Danil Lobanov (Backend dev).pdf" download class="bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors inline-flex items-center gap-2">
                         Download CV <i class="fas fa-arrow-down text-xs"></i>
                     </a>
@@ -116,10 +301,10 @@
             <h2 class="font-display text-3xl font-bold uppercase mb-8 md:mb-0 md:sticky md:top-24 self-start">01. About</h2>
             <div class="space-y-8 font-light text-lg md:text-xl leading-relaxed max-w-3xl">
                 <p>
-                    I am a Backend Engineer based in Tbilisi, Georgia, specializing in the .NET ecosystem. My focus is on designing scalable, secure, and high-performance backend systems for diverse industries ranging from Gaming to CRM platforms.
+                    I am a product-minded engineer based in Asia (GMT+8), specializing in the .NET ecosystem with a strong AI-first approach. My focus is on designing scalable, secure, and high-performance systems — then shipping them to production.
                 </p>
                 <p>
-                    I have a proven track record of improving system performance (up to 25%) and significantly reducing production bugs. My expertise lies in distributed systems, event-driven architectures, and implementing complex business logic.
+                    I use AI tools daily (ChatGPT, Copilot, Claude) as accelerators for code generation, test coverage, documentation, and rapid prototyping. I know exactly where AI stops and human judgment begins — architecture decisions, security boundaries, and production deployments stay human-owned.
                 </p>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8">
                     <div>
@@ -127,16 +312,16 @@
                         <span class="text-sm text-gray-500 uppercase tracking-wider">Years Exp.</span>
                     </div>
                     <div>
-                        <span class="block text-4xl font-display font-bold mb-2">25%</span>
-                        <span class="text-sm text-gray-500 uppercase tracking-wider">Perf. Boost</span>
+                        <span class="block text-4xl font-display font-bold mb-2">6</span>
+                        <span class="text-sm text-gray-500 uppercase tracking-wider">Side Projects</span>
                     </div>
                     <div>
-                        <span class="block text-4xl font-display font-bold mb-2">2</span>
-                        <span class="text-sm text-gray-500 uppercase tracking-wider">Languages</span>
+                        <span class="block text-4xl font-display font-bold mb-2">80%+</span>
+                        <span class="text-sm text-gray-500 uppercase tracking-wider">Test Coverage</span>
                     </div>
                     <div>
-                        <span class="block text-4xl font-display font-bold mb-2">∞</span>
-                        <span class="text-sm text-gray-500 uppercase tracking-wider">Commitment</span>
+                        <span class="block text-4xl font-display font-bold mb-2">AI</span>
+                        <span class="text-sm text-gray-500 uppercase tracking-wider">Daily Driver</span>
                     </div>
                 </div>
             </div>
@@ -148,143 +333,450 @@
         <div class="editorial-grid">
             <h2 class="font-display text-3xl font-bold uppercase mb-8 md:mb-0 md:sticky md:top-24 self-start">02. Experience</h2>
             <div class="space-y-16">
-                <!-- Job 1 -->
+
+                <!-- Appfox -->
                 <div class="group">
                     <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-4 border-b border-black pb-4">
-                        <h3 class="font-display text-2xl font-bold">Valletta Software Development</h3>
-                        <span class="text-gray-500 font-mono">May 2024 — Present</span>
+                        <h3 class="font-display text-2xl font-bold">Appfox</h3>
+                        <span class="text-gray-500 font-mono">Oct 2025 – Present</span>
                     </div>
-                    <h4 class="text-xl mb-4 font-medium">Game Backend Developer</h4>
-                    <p class="text-gray-600 mb-6 max-w-3xl">
-                        Designed and developed backend services for a Unity-based game using microservice architecture. Focused on scalability, reliability, and anti-cheat mechanisms.
+                    <h4 class="text-xl mb-4 font-medium">Senior Backend Engineer</h4>
+                    <p class="text-gray-600 mb-4 max-w-3xl text-sm">
+                        Stack: C#, .NET 8, ASP.NET Core, Azure (AKS, Service Bus, Blob), PostgreSQL, EF Core, Redis, RabbitMQ, MassTransit, Kafka, SignalR, Docker, Kubernetes, CQRS, MediatR, GitLab CI/CD
                     </p>
-                    <ul class="space-y-2 list-disc list-inside text-gray-700 marker:text-black">
-                        <li>Built REST and gRPC APIs for Unity client communication.</li>
-                        <li>Implemented async event processing with RabbitMQ and MassTransit.</li>
-                        <li>Designed microservices using C# and .NET 8.</li>
-                        <li>Server-side validation to prevent cheating and desync.</li>
+                    <ul class="space-y-2 list-disc list-inside text-gray-700 marker:text-black text-sm">
+                        <li>Engineered hybrid matchmaking service (Redis in-memory + PostgreSQL fallback) deployed on Azure Kubernetes Service — <b>reduced queue time by 60%</b>, handling thousands of concurrent players under auto-scaling.</li>
+                        <li>Redesigned CombatSimulator using CQRS pattern (MediatR) and stateless processing — <b>increased system throughput by 4×</b> with zero infrastructure changes.</li>
+                        <li>Replaced HTTP polling with SignalR real-time channels — <b>reduced game traffic by 40%</b> while improving reliability and reducing Azure bandwidth costs.</li>
+                        <li>Implemented UserLifecycleOrchestrator using MassTransit Saga pattern for distributed transaction safety across 4 microservices (Identity, Gateway, Combat, Inventory); migrated event bus from RabbitMQ to Kafka for higher-throughput event streaming.</li>
+                        <li>Containerised all services with Docker, orchestrated via Kubernetes (Helm charts); built GitLab CI/CD pipelines with automated rollback for zero-downtime deployments.</li>
+                        <li>Wrote unit and integration tests with xUnit + Moq, achieving <b>80%+ coverage</b> on critical gameplay services.</li>
                     </ul>
-                    <div class="flex flex-wrap gap-2 mt-6">
-                        <span class="border border-gray-300 px-3 py-1 rounded-full text-xs uppercase tracking-wide">.NET 8</span>
-                        <span class="border border-gray-300 px-3 py-1 rounded-full text-xs uppercase tracking-wide">RabbitMQ</span>
-                        <span class="border border-gray-300 px-3 py-1 rounded-full text-xs uppercase tracking-wide">Redis</span>
-                    </div>
                 </div>
 
-                <!-- Job 2 -->
+                <!-- Valletta Software -->
                 <div class="group">
                     <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-4 border-b border-gray-300 pb-4 group-hover:border-black transition-colors">
-                        <h3 class="font-display text-2xl font-bold">Valletta Software Development</h3>
-                        <span class="text-gray-500 font-mono">Mar 2023 — Jun 2024</span>
+                        <h3 class="font-display text-2xl font-bold">Valletta Software</h3>
+                        <span class="text-gray-500 font-mono">Mar 2023 – Oct 2025</span>
                     </div>
-                    <h4 class="text-xl mb-4 font-medium">C# Backend Developer (CRM)</h4>
-                    <p class="text-gray-600 mb-6 max-w-3xl">
-                        Developed a comprehensive CRM platform for recruitment automation. Migrated systems from .NET 6 to .NET 8 and improved analytics performance.
+                    <h4 class="text-xl mb-4 font-medium">Backend Engineer — CRM & Game Backend Systems</h4>
+                    <p class="text-gray-600 mb-4 max-w-3xl text-sm">
+                        Stack: C#, .NET 6/8, ASP.NET Core, Azure App Service, PostgreSQL, EF Core, RabbitMQ, MassTransit, Redis, CQRS, MediatR, Docker, GitHub Actions, xUnit, Moq
                     </p>
-                    <ul class="space-y-2 list-disc list-inside text-gray-700 marker:text-black">
-                        <li>Candidate management module with complex filtering.</li>
-                        <li>Optimized PostgreSQL queries for 25% faster reporting.</li>
-                        <li>Reduced notification errors by 20% with retry policies.</li>
-                        <li>High test coverage with xUnit and FluentAssertions.</li>
+                    <ul class="space-y-2 list-disc list-inside text-gray-700 marker:text-black text-sm">
+                        <li>Built notifications microservice with CQRS/MediatR command pipeline and RabbitMQ event-driven delivery — <b>35% faster delivery, 20% fewer errors</b>; deployed to Azure App Service with auto-scaling.</li>
+                        <li>Implemented Redis distributed caching layer for analytics reports — <b>25% faster report generation</b>; cached query results stored in Azure Redis Cache.</li>
+                        <li>Designed multi-tenant CRM platform: complex EF Core relational schemas with multi-migration strategy, background job scheduling (Hangfire), and Azure Blob Storage for document management.</li>
+                        <li>Applied CQRS + MediatR throughout CRM command/query separation, reducing controller complexity and improving testability.</li>
+                        <li>Built Unity game backend: PvP/PvE flows, player progression, leaderboards, in-game events — all event-driven via RabbitMQ.</li>
+                        <li>Achieved <b>80%+ test coverage</b> with xUnit + Moq + NSubstitute integration test suite; cut regression bug discovery time by 30%.</li>
                     </ul>
                 </div>
 
-                <!-- Job 3 -->
+                <!-- Empire Of Bloom -->
                 <div class="group">
                     <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-4 border-b border-gray-300 pb-4 group-hover:border-black transition-colors">
                         <h3 class="font-display text-2xl font-bold">Empire Of Bloom</h3>
-                        <span class="text-gray-500 font-mono">Sep 2021 — Feb 2023</span>
+                        <span class="text-gray-500 font-mono">Sep 2021 – Feb 2023</span>
                     </div>
-                    <h4 class="text-xl mb-4 font-medium">IoT Backend Developer</h4>
-                    <p class="text-gray-600 mb-6 max-w-3xl">
-                        Developed task management and monitoring for smart container devices. Worked closely with firmware teams on MQTT and Modbus integrations.
+                    <h4 class="text-xl mb-4 font-medium">Backend Engineer — IoT Smart Agricultural Container System</h4>
+                    <p class="text-gray-600 mb-4 max-w-3xl text-sm">
+                        Stack: C#, .NET, MQTT, Modbus RTU, gRPC, RabbitMQ, PostgreSQL, Docker, Azure IoT Hub, Kafka, CQRS
                     </p>
-                    <ul class="space-y-2 list-disc list-inside text-gray-700 marker:text-black">
-                        <li>Real-time monitoring via gRPC.</li>
-                        <li>Processed sensor data asynchronously with RabbitMQ.</li>
-                        <li>Reduced production bugs by 30% through improved testing.</li>
+                    <ul class="space-y-2 list-disc list-inside text-gray-700 marker:text-black text-sm">
+                        <li>Integrated MQTT, Modbus RTU, and gRPC to unify sensor telemetry from physical agricultural hardware into Azure IoT Hub — <b>improved monitoring uptime by 25%</b>.</li>
+                        <li>Refactored legacy data ingestion pipelines with Kafka event streaming for high-throughput sensor data — <b>reduced production bugs by 30%</b> and cut incident response time by half.</li>
+                        <li>Built CQRS-based command/query separation for sensor control commands vs. telemetry reads — enabled clean horizontal scaling per workload type.</li>
+                        <li>Deployed containerised services to Kubernetes cluster on Azure AKS; implemented Helm charts for environment-agnostic deployments (dev/staging/prod).</li>
+                        <li>Built real-time sensor dashboards (SignalR) with threshold alerting for temperature, humidity, CO₂, and nutrient monitoring in controlled-environment agriculture (CEA).</li>
                     </ul>
                 </div>
+
+                <!-- StrawPod.tech -->
+                <div class="group">
+                    <div class="flex flex-col md:flex-row md:items-baseline justify-between mb-4 border-b border-gray-300 pb-4 group-hover:border-black transition-colors">
+                        <h3 class="font-display text-2xl font-bold">StrawPod.tech</h3>
+                        <span class="text-gray-500 font-mono">2025 – Present</span>
+                    </div>
+                    <h4 class="text-xl mb-4 font-medium">Founder & Lead Engineer — AgriTech IoT Startup</h4>
+                    <p class="text-gray-600 mb-4 max-w-3xl text-sm">
+                        Stack: C#, .NET 8, Azure IoT Hub, Azure Functions, Kafka, MQTT, CQRS, MediatR, PostgreSQL, Redis, Docker, Kubernetes, Terraform
+                    </p>
+                    <ul class="space-y-2 list-disc list-inside text-gray-700 marker:text-black text-sm">
+                        <li>Building IoT-based smart sensor platform for precision strawberry cultivation: automated climate control, soil moisture and nutrient monitoring, AI-assisted growth analytics.</li>
+                        <li>Full Azure-native architecture: Azure IoT Hub for device management, Azure Functions for serverless sensor processing, Kafka for event streaming, AKS for service orchestration.</li>
+                        <li>CQRS + MediatR throughout: sensor command dispatch separated from telemetry query pipeline; Terraform-managed infrastructure as code.</li>
+                        <li>Combines B.Sc. Agronomy domain expertise (soil science, plant physiology, crop protection) with production-grade backend engineering — target market: berry farms in Canada and Europe.</li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="px-6 md:px-12 py-24 bg-white">
-        <h2 class="font-display text-3xl font-bold uppercase mb-16">03. Selected Projects</h2>
+        <h2 class="font-display text-3xl font-bold uppercase mb-4">03. Selected Projects</h2>
+        <p class="text-gray-500 mb-16 max-w-2xl">Hover over any project to pause the animation. Each preview is a live CSS animation representing the project's core interaction.</p>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Project 1 -->
-            <a href="https://github.com/ddenvy" target="_blank" class="group block">
-                <div class="bg-offwhite aspect-video rounded-sm mb-6 overflow-hidden relative">
-                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHRlY2hub2xvZ3klMjBuZXR3b3JrfGVufDB8fHx8MTc3MDQzOTc0Nnww&ixlib=rb-4.1.0&q=85" alt="Notification System" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h3 class="text-2xl font-display font-bold mb-2 group-hover:underline">Notification System</h3>
-                        <p class="text-gray-600 mb-4 max-w-md">Fault-tolerant notification system with Email and Telegram integration. Built for reliability.</p>
-                        <div class="flex flex-wrap gap-2 text-sm font-mono text-gray-500">
-                            <span>.NET</span> / <span>RabbitMQ</span> / <span>Redis</span>
-                        </div>
-                    </div>
-                    <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
-                </div>
-            </a>
-
-            <!-- Project 2 -->
-            <a href="https://github.com/ddenvy" target="_blank" class="group block">
-                <div class="bg-offwhite aspect-video rounded-sm mb-6 overflow-hidden relative">
-                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1717996563514-e3519f9ef9f7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxJb1QlMjBzbWFydCUyMGRldmljZXN8ZW58MHx8fHwxNzcwNDM5NzUyfDA&ixlib=rb-4.1.0&q=85" alt="IoT Task Scheduler" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h3 class="text-2xl font-display font-bold mb-2 group-hover:underline">IoT Task Scheduler</h3>
-                        <p class="text-gray-600 mb-4 max-w-md">Distributed scheduling for smart containers controlling environment variables via gRPC.</p>
-                        <div class="flex flex-wrap gap-2 text-sm font-mono text-gray-500">
-                            <span>gRPC</span> / <span>PostgreSQL</span> / <span>MQTT</span>
-                        </div>
-                    </div>
-                    <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
-                </div>
-            </a>
-
-            <!-- Project 3 -->
-            <a href="https://github.com/ddenvy/QuickMind" target="_blank" class="group block">
-                <div class="bg-offwhite aspect-video rounded-sm mb-6 overflow-hidden relative">
-                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1770210217380-d78a69acdc77?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGJyYWluJTIwbGVhcm5pbmd8ZW58MHx8fHwxNzcwNDM5NzYxfDA&ixlib=rb-4.1.0&q=85" alt="QuickMind" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h3 class="text-2xl font-display font-bold mb-2 group-hover:underline">QuickMind</h3>
-                        <p class="text-gray-600 mb-4 max-w-md">Flashcard learning app using spaced repetition algorithms. Desktop application.</p>
-                        <div class="flex flex-wrap gap-2 text-sm font-mono text-gray-500">
-                            <span>C#</span> / <span>WPF</span> / <span>Education</span>
-                        </div>
-                    </div>
-                    <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
-                </div>
-            </a>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- Project 4 -->
-            <a href="https://github.com/ddenvy/bank-app" target="_blank" class="group block">
-                <div class="bg-offwhite aspect-video rounded-sm mb-6 overflow-hidden relative">
-                    <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1548092372-0d1bd40894a3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwc2VjdXJpdHl8ZW58MHx8fHwxNzcwNDM5Nzc2fDA&ixlib=rb-4.1.0&q=85" alt="Bank App" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <!-- NEXUS -->
+            <a href="#" class="project-card group block">
+                <div class="bg-gray-900 aspect-video rounded-sm mb-6 overflow-hidden relative">
+                    <div class="absolute inset-0 flex flex-col p-4">
+                        <!-- Dashboard Header -->
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-2">
+                                <div class="w-2 h-2 rounded-full bg-emerald-400 nexus-dot"></div>
+                                <span class="text-white text-xs font-mono">NEXUS AI</span>
+                            </div>
+                            <div class="flex gap-1">
+                                <div class="w-8 h-1 bg-gray-700 rounded"></div>
+                                <div class="w-8 h-1 bg-gray-700 rounded"></div>
+                            </div>
+                        </div>
+                        <!-- Charts Grid -->
+                        <div class="flex-1 grid grid-cols-3 gap-2">
+                            <!-- Bar Chart -->
+                            <div class="bg-gray-800/50 rounded p-2 flex flex-col justify-end">
+                                <div class="flex items-end justify-between gap-1 h-16">
+                                    <div class="w-2 bg-blue-500/60 rounded-t nexus-bar" style="height: 40%"></div>
+                                    <div class="w-2 bg-blue-500/60 rounded-t nexus-bar" style="animation-delay: 0.3s; height: 70%"></div>
+                                    <div class="w-2 bg-blue-500/60 rounded-t nexus-bar" style="animation-delay: 0.6s; height: 50%"></div>
+                                    <div class="w-2 bg-blue-500/60 rounded-t nexus-bar" style="animation-delay: 0.9s; height: 85%"></div>
+                                </div>
+                            </div>
+                            <!-- Line Chart -->
+                            <div class="bg-gray-800/50 rounded p-2 flex items-center justify-center">
+                                <svg viewBox="0 0 60 30" class="w-full h-full">
+                                    <polyline points="0,25 15,18 30,22 45,8 60,12" fill="none" stroke="#60a5fa" stroke-width="1.5" class="nexus-line"/>
+                                    <circle cx="45" cy="8" r="2" fill="#60a5fa" class="nexus-dot"/>
+                                </svg>
+                            </div>
+                            <!-- AI Insight Card -->
+                            <div class="bg-gray-800/50 rounded p-2 nexus-card">
+                                <div class="w-1.5 h-1.5 rounded-full bg-amber-400 mb-1 nexus-dot"></div>
+                                <div class="text-[6px] text-gray-400 leading-tight">
+                                    <div class="text-amber-400 font-bold">AI Insight</div>
+                                    <div>Retention risk detected</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Bottom Stats -->
+                        <div class="flex gap-2 mt-2">
+                            <div class="flex-1 bg-gray-800/30 rounded p-1.5">
+                                <div class="text-[7px] text-gray-500">Engagement</div>
+                                <div class="text-xs text-emerald-400 font-mono">87%</div>
+                            </div>
+                            <div class="flex-1 bg-gray-800/30 rounded p-1.5">
+                                <div class="text-[7px] text-gray-500">Burnout</div>
+                                <div class="text-xs text-rose-400 font-mono">12%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Hover Overlay -->
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+                        <span class="text-white font-medium text-sm border border-white/30 px-4 py-2 rounded-full">View Details</span>
+                    </div>
                 </div>
                 <div class="flex justify-between items-start">
                     <div>
-                        <h3 class="text-2xl font-display font-bold mb-2 group-hover:underline">Bank App</h3>
-                        <p class="text-gray-600 mb-4 max-w-md">Banking application backend with account management and secure transactions.</p>
-                        <div class="flex flex-wrap gap-2 text-sm font-mono text-gray-500">
-                            <span>Go</span> / <span>C#</span> / <span>Finance</span>
+                        <h3 class="text-xl font-display font-bold mb-2 group-hover:underline">NEXUS</h3>
+                        <p class="text-gray-600 mb-3 text-sm max-w-md">AI-powered HR analytics platform with Semantic Kernel, Gemini integration, vector search, and real-time employee insights.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-gray-500">
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">.NET 9</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">Semantic Kernel</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">pgvector</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">Gemini</span>
                         </div>
                     </div>
-                    <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                    <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-gray-400"></i>
                 </div>
             </a>
+
+            <!-- ALLO -->
+            <a href="#" class="project-card group block">
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 aspect-video rounded-sm mb-6 overflow-hidden relative flex items-center justify-center">
+                    <!-- Ripple Effects -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-20 h-20 rounded-full border-2 border-emerald-400/30 allo-ripple absolute"></div>
+                        <div class="w-20 h-20 rounded-full border-2 border-emerald-400/30 allo-ripple-delay absolute"></div>
+                        <div class="w-20 h-20 rounded-full border-2 border-emerald-400/30 allo-ripple-delay2 absolute"></div>
+                    </div>
+                    <!-- Avatar -->
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 rounded-full bg-emerald-500 flex items-center justify-center allo-ring">
+                            <i class="fas fa-phone text-white text-xl"></i>
+                        </div>
+                    </div>
+                    <!-- Incoming Call UI -->
+                    <div class="absolute bottom-4 left-4 right-4 allo-incoming">
+                        <div class="bg-white/10 backdrop-blur rounded-lg p-3">
+                            <div class="text-white text-xs font-medium mb-2">Incoming Call</div>
+                            <div class="flex gap-2">
+                                <div class="flex-1 bg-emerald-500/80 rounded py-1.5 text-center">
+                                    <i class="fas fa-phone text-white text-xs"></i>
+                                </div>
+                                <div class="flex-1 bg-rose-500/80 rounded py-1.5 text-center">
+                                    <i class="fas fa-phone-slash text-white text-xs"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Status indicators -->
+                    <div class="absolute top-3 right-3 flex items-center gap-1.5">
+                        <div class="w-1.5 h-1.5 rounded-full bg-emerald-400 nexus-dot"></div>
+                        <span class="text-[8px] text-emerald-400 font-mono">LIVE</span>
+                    </div>
+                    <!-- Hover Overlay -->
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+                        <span class="text-white font-medium text-sm border border-white/30 px-4 py-2 rounded-full">View Details</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-xl font-display font-bold mb-2 group-hover:underline">ALLO</h3>
+                        <p class="text-gray-600 mb-3 text-sm max-w-md">Cross-platform VoIP calling app with Avalonia UI, SignalR signaling, WebRTC, and 5-platform support.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-gray-500">
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">.NET 8</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">SignalR</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">WebRTC</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">Avalonia</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-gray-400"></i>
+                </div>
+            </a>
+
+            <!-- DEVCHAT -->
+            <a href="#" class="project-card group block">
+                <div class="bg-gray-100 aspect-video rounded-sm mb-6 overflow-hidden relative">
+                    <div class="absolute inset-0 flex flex-col p-3">
+                        <!-- Channel Header -->
+                        <div class="flex items-center gap-2 pb-2 border-b border-gray-200 mb-2">
+                            <span class="text-gray-400 text-xs">#</span>
+                            <span class="text-gray-700 text-xs font-medium">general</span>
+                        </div>
+                        <!-- Messages -->
+                        <div class="flex-1 flex flex-col gap-2 justify-end">
+                            <div class="flex gap-2 chat-msg-in" style="animation-delay: 0.5s">
+                                <div class="w-6 h-6 rounded-full bg-indigo-400 flex-shrink-0 flex items-center justify-center">
+                                    <span class="text-white text-[8px] font-bold">A</span>
+                                </div>
+                                <div class="bg-white rounded-lg rounded-tl-none px-2.5 py-1.5 shadow-sm max-w-[80%]">
+                                    <div class="text-[7px] text-indigo-500 font-medium mb-0.5">Alice</div>
+                                    <div class="text-gray-700 text-[10px] leading-tight">Hey team, the new API is ready for testing!</div>
+                                </div>
+                            </div>
+                            <div class="flex gap-2 flex-row-reverse chat-msg-out" style="animation-delay: 1.5s">
+                                <div class="w-6 h-6 rounded-full bg-emerald-400 flex-shrink-0 flex items-center justify-center">
+                                    <span class="text-white text-[8px] font-bold">M</span>
+                                </div>
+                                <div class="bg-emerald-50 rounded-lg rounded-tr-none px-2.5 py-1.5 shadow-sm max-w-[80%]">
+                                    <div class="text-[7px] text-emerald-600 font-medium mb-0.5">Me</div>
+                                    <div class="text-gray-700 text-[10px] leading-tight">Great! I'll check it out now.</div>
+                                </div>
+                            </div>
+                            <!-- Typing Indicator -->
+                            <div class="flex gap-2 chat-msg-in" style="animation-delay: 2.5s">
+                                <div class="w-6 h-6 rounded-full bg-amber-400 flex-shrink-0 flex items-center justify-center">
+                                    <span class="text-white text-[8px] font-bold">B</span>
+                                </div>
+                                <div class="bg-white rounded-lg rounded-tl-none px-3 py-2 shadow-sm">
+                                    <div class="flex gap-1">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-gray-400 chat-dot"></div>
+                                        <div class="w-1.5 h-1.5 rounded-full bg-gray-400 chat-dot"></div>
+                                        <div class="w-1.5 h-1.5 rounded-full bg-gray-400 chat-dot"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Input -->
+                        <div class="mt-2 bg-white rounded-full px-3 py-1.5 flex items-center gap-2 shadow-sm">
+                            <div class="w-3 h-3 rounded-full bg-gray-200"></div>
+                            <div class="flex-1 h-2 bg-gray-100 rounded-full"></div>
+                            <i class="fas fa-paper-plane text-indigo-400 text-[8px]"></i>
+                        </div>
+                    </div>
+                    <!-- Hover Overlay -->
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+                        <span class="text-white font-medium text-sm border border-white/30 px-4 py-2 rounded-full">View Details</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-xl font-display font-bold mb-2 group-hover:underline">DevChat</h3>
+                        <p class="text-gray-600 mb-3 text-sm max-w-md">Discord-like team messenger with voice/video calls via LiveKit, file sharing, and real-time messaging.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-gray-500">
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">.NET 8</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">Next.js</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">LiveKit</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">SignalR</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-gray-400"></i>
+                </div>
+            </a>
+
+            <!-- THANKS LAOSHI -->
+            <a href="#" class="project-card group block">
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50 aspect-video rounded-sm mb-6 overflow-hidden relative flex items-center justify-center">
+                    <!-- Flashcard -->
+                    <div class="relative w-32 h-20 laoshi-card laoshi-glow" style="perspective: 600px;">
+                        <div class="absolute inset-0 bg-white rounded-xl shadow-lg flex items-center justify-center border border-amber-200">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-gray-800 laoshi-char" style="animation-delay: 0.5s">谢谢</div>
+                                <div class="text-[8px] text-gray-400 mt-1 laoshi-char" style="animation-delay: 1s">xièxie</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Floating elements -->
+                    <div class="absolute top-4 left-4 text-2xl opacity-20 laoshi-char" style="animation-delay: 0.2s">你好</div>
+                    <div class="absolute bottom-4 right-4 text-xl opacity-20 laoshi-char" style="animation-delay: 0.8s">老师</div>
+                    <div class="absolute top-6 right-8 text-lg opacity-15 laoshi-char" style="animation-delay: 1.2s">学习</div>
+                    <!-- Progress indicator -->
+                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1">
+                        <div class="w-6 h-1 bg-amber-400 rounded-full"></div>
+                        <div class="w-6 h-1 bg-amber-200 rounded-full"></div>
+                        <div class="w-6 h-1 bg-amber-200 rounded-full"></div>
+                    </div>
+                    <!-- Hover Overlay -->
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+                        <span class="text-white font-medium text-sm border border-white/30 px-4 py-2 rounded-full">View Details</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-xl font-display font-bold mb-2 group-hover:underline">Thanks Laoshi</h3>
+                        <p class="text-gray-600 mb-3 text-sm max-w-md">Chinese language learning platform with SM-2 spaced repetition, multiple study modes, bilingual content, and PWA support.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-gray-500">
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">.NET 8</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">React 19</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">SM-2 SRS</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">PWA</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-gray-400"></i>
+                </div>
+            </a>
+
+            <!-- GODHUNTER -->
+            <a href="#" class="project-card group block">
+                <div class="bg-gray-950 aspect-video rounded-sm mb-6 overflow-hidden relative font-mono">
+                    <!-- Scan Line -->
+                    <div class="absolute left-0 right-0 h-px bg-emerald-400/60 gh-scan z-10"></div>
+                    <!-- Terminal Content -->
+                    <div class="absolute inset-0 p-4 flex flex-col">
+                        <div class="text-emerald-500 text-[8px] mb-2">$ godhunter scan --url linkedin.com/jobs</div>
+                        <div class="flex-1 space-y-1.5">
+                            <div class="gh-text text-emerald-400 text-[8px]">
+                                [INFO] Connecting to target...
+                            </div>
+                            <div class="gh-text text-emerald-400 text-[8px]" style="animation-delay: 0.5s">
+                                [OK] Page loaded in 1.2s
+                            </div>
+                            <div class="gh-text text-amber-400 text-[8px]" style="animation-delay: 1s">
+                                [SCAN] Found 3 job postings
+                            </div>
+                            <div class="gh-text text-blue-400 text-[8px]" style="animation-delay: 1.5s">
+                                [AI] Generating tailored resume...
+                            </div>
+                        </div>
+                        <!-- Progress Bar -->
+                        <div class="mt-auto">
+                            <div class="flex justify-between text-[7px] text-gray-500 mb-1">
+                                <span>Processing</span>
+                                <span class="text-emerald-400">78%</span>
+                            </div>
+                            <div class="h-1 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-emerald-500 rounded-full gh-progress"></div>
+                            </div>
+                        </div>
+                        <!-- Cursor -->
+                        <div class="text-emerald-500 text-[10px] mt-2">
+                            $<span class="gh-cursor">_</span>
+                        </div>
+                    </div>
+                    <!-- Hover Overlay -->
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-center justify-center">
+                        <span class="text-white font-medium text-sm border border-white/30 px-4 py-2 rounded-full">View Details</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-xl font-display font-bold mb-2 group-hover:underline">GodHunter</h3>
+                        <p class="text-gray-600 mb-3 text-sm max-w-md">AI-powered job application assistant with LLM resume generation, Playwright scraping, and application pipeline tracking.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-gray-500">
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">.NET</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">Avalonia</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">Playwright</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">LLM APIs</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-gray-400"></i>
+                </div>
+            </a>
+
+            <!-- GAMEDEV -->
+            <a href="#" class="project-card group block">
+                <div class="bg-gray-900 aspect-video rounded-sm mb-6 overflow-hidden relative">
+                    <!-- Lanes -->
+                    <div class="absolute inset-0 flex">
+                        <div class="flex-1 border-r border-gray-800 game-lane relative">
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-6 bg-cyan-400 rounded-sm game-note"></div>
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-6 bg-cyan-400 rounded-sm game-note game-note-delay"></div>
+                        </div>
+                        <div class="flex-1 border-r border-gray-800 game-lane relative" style="animation-delay: 0.3s">
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-6 bg-rose-400 rounded-sm game-note game-note-delay2"></div>
+                        </div>
+                        <div class="flex-1 border-r border-gray-800 game-lane relative" style="animation-delay: 0.6s">
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-6 bg-amber-400 rounded-sm game-note game-note-delay3"></div>
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-6 bg-amber-400 rounded-sm game-note game-note-delay"></div>
+                        </div>
+                        <div class="flex-1 game-lane relative" style="animation-delay: 0.9s">
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-6 bg-emerald-400 rounded-sm game-note game-note-delay2"></div>
+                        </div>
+                    </div>
+                    <!-- Hit Line -->
+                    <div class="absolute bottom-8 left-0 right-0 h-0.5 bg-white/30"></div>
+                    <!-- Beat Indicator -->
+                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1">
+                        <div class="w-2 h-2 rounded-full bg-cyan-400 game-beat"></div>
+                        <div class="w-2 h-2 rounded-full bg-rose-400 game-beat" style="animation-delay: 0.125s"></div>
+                        <div class="w-2 h-2 rounded-full bg-amber-400 game-beat" style="animation-delay: 0.25s"></div>
+                        <div class="w-2 h-2 rounded-full bg-emerald-400 game-beat" style="animation-delay: 0.375s"></div>
+                    </div>
+                    <!-- Score -->
+                    <div class="absolute top-3 right-3 text-right">
+                        <div class="text-white text-xs font-bold font-mono">PERFECT</div>
+                        <div class="text-cyan-400 text-[10px] font-mono">1,240</div>
+                    </div>
+                    <!-- Combo -->
+                    <div class="absolute top-3 left-3">
+                        <div class="text-amber-400 text-[10px] font-bold">COMBO x12</div>
+                    </div>
+                    <!-- Hover Overlay -->
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+                        <span class="text-white font-medium text-sm border border-white/30 px-4 py-2 rounded-full">View Details</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-xl font-display font-bold mb-2 group-hover:underline">Rhythm Combat</h3>
+                        <p class="text-gray-600 mb-3 text-sm max-w-md">Unity prototype combining rhythm game mechanics with real-time combat — timing-based attacks sync to musical beats.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-gray-500">
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">C#</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">Unity</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">Cinemachine</span>
+                            <span class="bg-gray-100 px-2 py-0.5 rounded">Game Design</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300 text-gray-400"></i>
+                </div>
+            </a>
+
         </div>
     </section>
 
@@ -297,12 +789,12 @@
                     <div>
                         <h3 class="text-sm font-bold uppercase tracking-widest mb-4 border-b border-black pb-2">Core Tech</h3>
                         <ul class="space-y-2 text-lg">
-                            <li>C# / .NET 8</li>
+                            <li>C# / .NET 8/9</li>
                             <li>ASP.NET Core</li>
-                            <li>Go (Golang)</li>
                             <li>TypeScript</li>
                             <li>PostgreSQL</li>
                             <li>Redis</li>
+                            <li>MongoDB</li>
                         </ul>
                     </div>
                     <div>
@@ -313,16 +805,36 @@
                             <li>Clean Architecture</li>
                             <li>DDD</li>
                             <li>REST & gRPC</li>
+                            <li>CQRS / MediatR</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold uppercase tracking-widest mb-4 border-b border-black pb-2">AI & Integration</h3>
+                        <ul class="space-y-2 text-lg">
+                            <li>Semantic Kernel</li>
+                            <li>LLM APIs (OpenAI, Gemini, Claude)</li>
+                            <li>Vector Search (pgvector)</li>
+                            <li>SignalR / WebSockets</li>
+                            <li>MQTT / Modbus / Kafka</li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="text-sm font-bold uppercase tracking-widest mb-4 border-b border-black pb-2">Tools & DevOps</h3>
                         <ul class="space-y-2 text-lg">
                             <li>Docker & K8s</li>
-                            <li>RabbitMQ</li>
-                            <li>MassTransit</li>
-                            <li>GitHub Actions</li>
-                            <li>Grafana / Prometheus</li>
+                            <li>RabbitMQ / MassTransit</li>
+                            <li>GitHub Actions / CI-CD</li>
+                            <li>Terraform</li>
+                            <li>Azure (IoT Hub, AKS)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold uppercase tracking-widest mb-4 border-b border-black pb-2">AI Tools (Daily)</h3>
+                        <ul class="space-y-2 text-lg">
+                            <li>ChatGPT</li>
+                            <li>GitHub Copilot</li>
+                            <li>Claude</li>
+                            <li>Cursor</li>
                         </ul>
                     </div>
                     <div>
@@ -336,14 +848,6 @@
                                 <div class="font-bold">B.Sc. Agronomy</div>
                                 <div class="text-sm text-gray-500">RUDN (2015)</div>
                             </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-bold uppercase tracking-widest mb-4 border-b border-black pb-2">Languages</h3>
-                        <ul class="space-y-2 text-lg">
-                            <li>Russian <span class="text-gray-500 text-sm">(Native)</span></li>
-                            <li>English <span class="text-gray-500 text-sm">(Advanced C1)</span></li>
-                            <li>Chinese <span class="text-gray-500 text-sm">(Intermediate B1)</span></li>
                         </ul>
                     </div>
                 </div>
@@ -373,7 +877,7 @@
             </div>
             
             <div class="text-gray-500 text-sm">
-                &copy; 2024 Danil Lobanov. Design inspired by Ace & Tate.
+                &copy; 2025 Danil Lobanov. Built with AI assistance.
             </div>
         </div>
     </footer>
